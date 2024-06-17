@@ -213,4 +213,10 @@ return {
     {
         "RRethy/vim-illuminate",
     },
+    {
+        "luukvbaal/statuscol.nvim",
+        config = function()
+            require("plugins.statuscol")
+        end,
+    },
 }
