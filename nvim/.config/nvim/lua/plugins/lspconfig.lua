@@ -15,6 +15,10 @@ capabilities = vim.tbl_deep_extend("force", capabilities, {
         positionEncodings = { "utf-16" },
     },
 })
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+}
 
 -- the actual setup
 -- a table of 2 strings, the first is the config name, the second is the binary name in masonpath
@@ -35,3 +39,5 @@ for _, server in ipairs(default_list) do
         capabilities = capabilities,
     })
 end
+
+require("ufo").setup({})

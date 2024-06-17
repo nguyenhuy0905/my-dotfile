@@ -132,3 +132,6 @@ map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", { desc = "Navigate to left window
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { desc = "Navigate to below window" })
 map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Navigate to above window" })
 map("n", "<C-j>", "<cmd>TmuxNavigateRight<CR>", { desc = "Navigate to right window" })
+-- folding
+map("n", "zR", "<cmd>lua require('ufo').openAllFolds()<CR>", { desc = "Open all folds" })
+map("n", "zM", "<cmd>lua require('ufo').closeAllFolds()<CR>", { desc = "Close all folds" })
