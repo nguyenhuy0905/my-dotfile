@@ -210,4 +210,7 @@ return {
         },
         -- set up in lspconfig
     },
+    {
+        "RRethy/vim-illuminate",
+    },
 }
