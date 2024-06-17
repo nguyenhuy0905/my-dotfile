@@ -94,4 +94,10 @@ return {
         end,
         dependencies = { { "nvim-tree/nvim-web-devicons" } },
     },
+    {
+        "karb94/neoscroll.nvim",
+        config = function()
+            require("plugins.neoscroll")
+        end,
+    },
 }
