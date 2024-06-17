@@ -86,4 +86,12 @@ return {
         "danymat/neogen",
         config = true,
     },
+    {
+        "nvimdev/dashboard-nvim",
+        event = "VimEnter",
+        config = function()
+            require("plugins.dashboard")
+        end,
+        dependencies = { { "nvim-tree/nvim-web-devicons" } },
+    },
 }
