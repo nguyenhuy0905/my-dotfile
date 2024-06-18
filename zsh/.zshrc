@@ -113,7 +113,6 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f "/home/huynguyen/.ghcup/env" ] && . "/home/huynguyen/.ghcup/env" # ghcup-env
 eval "$(atuin init zsh)"
-alias vale=~/.local/share/nvim/mason/bin/vale
 alias neofetch=fastfetch
 
 # convenient aliases
