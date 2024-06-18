@@ -6,7 +6,7 @@ MASON_INSTALLS = {
     "vale",
     "codespell",
     "markdownlint",
-    "cmakelint",
+    "cmakelang",
     -- clang-tidy isn't here, but we can use it if we downloaded the Clang toolchain
     -- Formatter
     "stylua",

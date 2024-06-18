@@ -13,17 +13,12 @@ null_ls.setup({
         -- FORMATTERS
         format.stylua,
         format.markdownlint,
+        format.cmake_format,
         -- LINTERS
-        -- universal
         diags.codespell,
-        -- markdown
         diags.vale,
         diags.markdownlint,
-        -- cmake
-        diags.cmake_lint.with({
-            command = "cmakelint",
-            args = { "$FILENAME" },
-        }),
+        diags.cmake_lint,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
