@@ -2,4 +2,7 @@
 
 > Supplemental for my blog on my Neovim setup from scratch
 
-## What's to be configured?
+## Note
+
+- I wanted to support the vscode-nvim extension, but it seems not very
+possible at this point.
