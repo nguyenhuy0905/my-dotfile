@@ -14,24 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-    {
-        import = "entry.novscode",
-        cond = function()
-            return not vim.g.vscode
-        end,
-    },
-    {
-        import = "entry.vscode",
-        cond = function()
-            return vim.g.vscode
-        end,
-    },
-    {
-        import = "entry.alwayson",
-        cond = true,
-    },
-})
+require("entry")
 require("core.mappings")
 require("core.options")
 require("core.cmd")
