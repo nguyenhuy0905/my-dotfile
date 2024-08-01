@@ -4,7 +4,6 @@ require("mason-lspconfig").setup({
         "lua_ls",
         -- low levels
         "rust_analyzer",
-        "clangd",
         "cmake",
         -- web friends
         "html",
@@ -16,5 +15,7 @@ require("mason-lspconfig").setup({
         "omnisharp",
         -- bash
         "bashls",
+        -- general purpose
+        "efm",
     },
 })

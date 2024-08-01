@@ -17,9 +17,9 @@ map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
 map("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
 map("n", "<leader>fb", builtin.buffers, { desc = "List buffers" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "Show all help tags" })
--- nvim tree
+-- telescope file browser
 if not vim.g.vscode then
-    map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Nvim tree toggle" })
+    map("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", { desc = "Telescope file_browser" })
 end
 -- toggleterm
 if not vim.g.vscode then

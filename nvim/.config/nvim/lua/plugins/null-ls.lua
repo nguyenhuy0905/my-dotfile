@@ -8,16 +8,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
     sources = {
-        -- CODE ACTIONS
-        ca.gitsigns,
-        -- FORMATTERS
-        format.stylua,
-        format.markdownlint,
-        format.cmake_format,
-        -- LINTERS
-        diags.codespell,
-        diags.vale,
-        diags.markdownlint,
+        -- anything not supported by nvim-lint or conform
         diags.cmake_lint,
     },
     on_attach = function(client, bufnr)
