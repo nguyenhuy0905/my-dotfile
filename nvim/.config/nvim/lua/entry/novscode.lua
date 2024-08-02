@@ -210,6 +210,7 @@ return {
     },
     {
         "jackguo380/vim-lsp-cxx-highlight",
+        enabled = false,
         ft = { "c", "cpp", "objc", "objcpp", "cuda" },
     },
     {
