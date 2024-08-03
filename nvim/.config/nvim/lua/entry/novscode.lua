@@ -226,5 +226,9 @@ return {
         config = function()
             require("plugins.harpoon")
         end
+    },
+    {
+        "folke/zen-mode.nvim",
+        event = BUFOPEN,
     }
 }
