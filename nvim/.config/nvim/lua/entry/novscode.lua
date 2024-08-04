@@ -230,5 +230,8 @@ return {
     {
         "folke/zen-mode.nvim",
         event = BUFOPEN,
+        config = function ()
+            require("plugins.zen-mode")
+        end
     }
 }

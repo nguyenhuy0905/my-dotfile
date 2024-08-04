@@ -90,6 +90,7 @@ if not vim.g.vscode then
     map({ "n", "v" }, "<leader>ol", "<cmd>Lspsaga outline<CR>", { desc = "LSPSaga outline" })
     map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { desc = "LSPSaga rename" })
 end
+
 -- dap
 if not vim.g.vscode then
     map({ "i", "n", "v" }, "<F5>", "<cmd>DapContinue<CR>", { desc = "DAP start or continue a debug session" })
