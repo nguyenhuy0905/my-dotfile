@@ -108,6 +108,40 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# vim keybind and cursor
+cursor_mode() {
+    cursor_block='\e[2 q'
+    cursor_beam='\e[6 q'
+
+    function zle-keymap-select {
+        if [[ ${KEYMAP} == vicmd ]] ||
+            [[ $1 = 'block' ]]; then
+            echo -ne $cursor_block
+        elif [[ ${KEYMAP} == main ]] ||
+            [[ ${KEYMAP} == viins ]] ||
+            [[ ${KEYMAP} = '' ]] ||
+            [[ $1 = 'beam' ]]; then
+            echo -ne $cursor_beam
+        fi
+    }
+
+    zle-line-init() {
+        echo -ne $cursor_beam
+    }
+
+    zle -N zle-keymap-select
+    zle -N zle-line-init
+}
+cursor_mode
+
+bindkey -v
+
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -115,15 +149,5 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 eval "$(atuin init zsh)"
 alias neofetch=fastfetch
-
-# my CMake options
-export CMAKE_GENERATOR=Ninja
-export CMAKE_BUILD_TYPE=Debug
-export CMAKE_CXX_COMPILER=clang++
-export CMAKE_C_COMPILER=clang
-export CMAKE_EXPORT_COMPILE_COMMANDS=ON
-
-export CC=clang
-export CXX=clang++
 
 . "$HOME/.atuin/bin/env"
