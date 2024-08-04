@@ -1,0 +1,152 @@
+* {
+    font-family: "JetBrainsMono NF";
+    font-size: 16px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 0px;
+    opacity: 0.75;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#network:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#clock:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#language:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#battery.charging:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#battery.plugged:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    min-width: 24px;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: rgba(0,0,0,0.25);
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock {
+    padding: 0 5 0 5;
+}
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network {
+    padding: 0 15 0 10;
+}
+#pulseaudio {
+    padding: 0 10 0 10;
+}
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#language {
+    padding: 0 3 0 3;
+}
+#mpd,
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background-color: transparent;
+}
+
+#battery {
+    background-color: transparent;
+}
+
+#battery.charging, #battery.plugged {
+    background-color: transparent;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
