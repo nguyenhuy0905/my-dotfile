@@ -25,9 +25,12 @@ set $menu wofi --show drun | xargs swaymsg exec --
 # Default wallpaper (more resolutions are available in /usr/share/background
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # my external monitor
-output DP-2 resolution 2560x1440@75Hz adaptive_sync on position 0,0 
+output DP-2 resolution 2560x1440@75Hz adaptive_sync on\
+    bg /usr/share/wallpapers/summer_1am/contents/images/2560x1440.jpg fill position 0,0 
 # my laptop's builtin monitor
-output eDP-1 resolution 1920x1200@60Hz adaptive_sync on position 2560,512
+output eDP-1 resolution 1920x1200@60Hz \
+    bg /usr/share/wallpapers/summer_1am/contents/images/1920x1200.jpg fill\
+    adaptive_sync on position 2560,512
 focus output DP-2
 
 set $laptop eDP-1
@@ -164,6 +167,10 @@ exec swayidle -w \
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    default_border none
+    default_floating_border none
+    titlebar_border_thickness 0
 #
 # Scratchpad:
 #
