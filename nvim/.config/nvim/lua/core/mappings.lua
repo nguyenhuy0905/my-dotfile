@@ -17,6 +17,7 @@ map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
 map("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
 map("n", "<leader>bf", builtin.buffers, { desc = "List buffers" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "Show all help tags" })
+map("n", "<leader>gf", builtin.git_files, { desc = "Find files in git project" })
 -- telescope file browser
 if not vim.g.vscode then
     map("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", { desc = "Telescope file_browser" })
