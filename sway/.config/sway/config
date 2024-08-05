@@ -25,7 +25,7 @@ set $menu wofi --show drun | xargs swaymsg exec --
 # Default wallpaper (more resolutions are available in /usr/share/background
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # my external monitor
-output DP-2 resolution 2560x1440@75Hz adaptive_sync on\
+output DP-2 resolution 2560x1440@74.971Hz adaptive_sync on\
     bg /usr/share/wallpapers/summer_1am/contents/images/2560x1440.jpg fill position 0,0 
 # my laptop's builtin monitor
 output eDP-1 resolution 1920x1200@60Hz \
@@ -43,10 +43,13 @@ bindswitch --reload --locked lid:off output $laptop enable
 #
 # Example configuration:
 #
+
+set $lockcfg swaylock -f --line-uses-inside
+
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 '$lockcfg' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep '$lockcfg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -88,6 +91,8 @@ exec swayidle -w \
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+
+    bindsym $mod+Escape exec $lockcfg
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -214,7 +219,7 @@ bindsym {
     Print       exec grimshot copy output 
     # Capture the currently active window
     Alt+Print   exec grimshot copy active
-    $mod++P     exec grimshot copy area
+    $mod+P     exec grimshot copy area
     # Select and capture a custom rectangular area
     Ctrl+Print  exec grimshot copy area
     $mod+Shift+P      exec grimshot copy area
