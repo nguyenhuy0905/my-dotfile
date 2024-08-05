@@ -142,10 +142,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 eval "$(atuin init zsh)"
-
-. "$HOME/.atuin/bin/env"
 
 vicd()
 {

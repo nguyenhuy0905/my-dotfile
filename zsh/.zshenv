@@ -17,3 +17,7 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=ON
 
 export CC=clang
 export CXX=clang++
+
+# auto config files
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
+. "$HOME/.atuin/bin/env"
