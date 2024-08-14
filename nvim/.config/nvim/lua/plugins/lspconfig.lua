@@ -9,6 +9,7 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = vim.tbl_deep_extend("force", capabilities, {
     offsetEncoding = { "utf-16" },
     general = {
@@ -24,11 +25,14 @@ capabilities.textDocument.foldingRange = {
 -- a table of 2 strings, the first is the config name, the second is the binary name in masonpath
 local default_list = {
     "lua_ls",
-    "cmake",
+    -- "cmake",
+    "neocmake",
     "bashls",
     "marksman",
     "html",
-    "clangd",
+    -- "clangd",
+    "ruff_lsp",
+    "ast_grep"
 }
 
 -- init default list
@@ -41,14 +45,38 @@ for _, server in ipairs(default_list) do
     })
 end
 
--- lspconfig["ccls"].setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
---     init_options = {
---         highlight = {
---             lsRanges = true,
---         }
---     },
--- })
+lspconfig["ccls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    init_options = {
+        highlight = {
+            lsRanges = true,
+        }
+    },
+})
+
+vim.g.rustaceanvim = {
+    server = {
+        capabilities = capabilities,
+        -- on_attach = function (client, bufnr)
+        --     vim.keymap.set("n", "<leader>ca", function ()
+        --         vim.cmd.RustLsp("codeAction")
+        --         print("Rust code action triggered.")
+        --     end,
+        --     { silent = true, buffer = bufnr })
+        -- end,
+        on_attach = on_attach,
+        default_settings = {
+            ["rust-analyzer"] = {
+                diagnostic = {
+                    enable = true,
+                },
+                cargo = {
+                    allFeatures = true,
+                }
+            }
+        }
+    }
+}
 
 require("ufo").setup({})
