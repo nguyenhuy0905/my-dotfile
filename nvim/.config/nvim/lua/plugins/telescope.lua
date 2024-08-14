@@ -1,6 +1,16 @@
 local actions = require("telescope.actions")
 require("telescope").setup({
     defaults = {
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "-u",
+        },
         preview = {
             mime_hook = function(filepath, bufnr, opts)
                 local is_image = function(path)
@@ -33,14 +43,6 @@ require("telescope").setup({
             hijack_netrw = true,
             hidden = true,
             mappings = {
-                n = {
-                    ["<leader>cd"] = function(prompt_bufnr)
-                        local selection = require("telescope.actions.state").get_selected_entry()
-                        local dir = vim.fn.fnamemodify(selection.path, ":p:h")
-                        actions.close(prompt_bufnr)
-                        vim.cmd(string.format("cd %s", dir))
-                    end
-                },
             },
         }
     },
@@ -55,8 +57,9 @@ require("telescope").setup({
     },
     find_files = {
         hidden = true,
+        no_ignore = true,
         cwd = vim.fn.expand("%:p:h"),
-        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+        find_command = { "fd", "--type", "f", "--strip-cwd-prefix", "--no-ignore-vcs", "--follow" },
     },
 })
 
