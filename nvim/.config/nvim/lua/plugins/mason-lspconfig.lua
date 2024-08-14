@@ -5,6 +5,7 @@ require("mason-lspconfig").setup({
         -- low levels
         "rust_analyzer",
         "cmake",
+        "neocmake",
         -- web friends
         "html",
         "cssls",
@@ -17,5 +18,10 @@ require("mason-lspconfig").setup({
         "bashls",
         -- general purpose
         "efm",
+        -- snek
+        "ruff",
+        "ruff_lsp",
+        -- refactoring
+        "ast_grep"
     },
 })
