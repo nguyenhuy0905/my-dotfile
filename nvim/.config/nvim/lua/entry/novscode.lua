@@ -61,6 +61,7 @@ return {
                 -- See the configuration section for more details
                 -- Load luvit types when the `vim.uv` word is found
                 { path = "luvit-meta/library", words = { "vim%.uv" } },
+                { plugins = { "nvim-dap-ui" }, types = true },
             },
         },
     },
@@ -75,6 +76,7 @@ return {
     {
         "mfussenegger/nvim-dap",
         cmd = { "DapContinue", "DapToggleBreakpoint" },
+        dependencies = { "rcarriga/nvim-dap-ui" },
         config = function()
             require("plugins.nvim-dap")
         end,
@@ -210,7 +212,8 @@ return {
     },
     {
         "jackguo380/vim-lsp-cxx-highlight",
-        enabled = false,
+        enabled = true,
+        event = VeryLazy,
         ft = { "c", "cpp", "objc", "objcpp", "cuda" },
     },
     {
@@ -230,8 +233,13 @@ return {
     {
         "folke/zen-mode.nvim",
         event = BUFOPEN,
-        config = function ()
+        config = function()
             require("plugins.zen-mode")
         end
+    },
+    {
+        'mrcjkb/rustaceanvim',
+        version = '^5', -- Recommended
+        lazy = false,   -- This plugin is already lazy
     }
 }
