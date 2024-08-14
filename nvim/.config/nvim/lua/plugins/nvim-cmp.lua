@@ -12,6 +12,7 @@ cmp.setup({
         { name = "luasnip" }, -- For luasnip users.
         { name = "buffer" },
         { name = "path" },
+        { name = "lazydev", group_index = 0, },
     }),
     mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
