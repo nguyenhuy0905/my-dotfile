@@ -8,6 +8,7 @@ dap.adapters.codelldb = {
     executable = {
         command = masonpath .. "codelldb",
         args = { "--port", "${port}" },
+        env = { "LSAN_OPTIONS=verbosity=1:log_threads=1" }
     },
 }
 dap.adapters.gdb = {
@@ -20,7 +21,7 @@ dap.adapters.gdb = {
 dap.configurations.cpp = {
     {
         name = "Launch file",
-        type = "gdb",
+        type = "codelldb",
         request = "launch",
         program = function()
             return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
