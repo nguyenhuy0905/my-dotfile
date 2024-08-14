@@ -44,10 +44,6 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 set $lockcfg swaylock -f --line-uses-inside
 
-exec swayidle -w \
-         timeout 300 '$lockcfg' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep '$lockcfg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
