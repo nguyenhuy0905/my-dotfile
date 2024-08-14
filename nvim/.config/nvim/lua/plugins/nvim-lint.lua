@@ -4,6 +4,7 @@ lint.linters_by_ft = {
     cpp = { "clangtidy" },
     -- cmake = { "cmakelint" },
     markdown = { "markdownlint", "vale" },
+    python = { "ruff" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
