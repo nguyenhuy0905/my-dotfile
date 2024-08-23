@@ -25,11 +25,11 @@ set $bgimg /usr/share/wallpapers/summer_1am/contents/images/2560x1440.jpg
 ### Output configuration
 # Default wallpaper (more resolutions are available in /usr/share/background)
 output * bg $bgimg fill
-output DP-2 resolution 2560x1440@74.971Hz adaptive_sync on position 0 0 
+output DP-3 resolution 2560x1440@74.971Hz adaptive_sync on position 0 0 
 
-output eDP-1 resolution 1920x1200@60Hz adaptive_sync on position 2560 512
+output eDP-1 resolution 1920x1200@60Hz adaptive_sync on position 2560 512 
 
-focus output DP-2
+focus output DP-3
 
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
