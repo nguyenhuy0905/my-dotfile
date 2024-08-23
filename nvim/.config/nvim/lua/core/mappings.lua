@@ -4,6 +4,7 @@
 local builtin = require("telescope.builtin")
 local map = vim.keymap.set
 -- universal
+map({"i"}, "<leader>jk", "<Esc>", { desc = "Switch from edit to normal mode" })
 -- run formatter
 map({ "n", "v" }, "<leader>fm", vim.lsp.buf.format, { desc = "Format current file" })
 -- save all buffers, close all buffers, then quit
