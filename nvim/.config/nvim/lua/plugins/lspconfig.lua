@@ -30,7 +30,7 @@ local default_list = {
     "bashls",
     "marksman",
     "html",
-    -- "clangd",
+    "clangd",
     "ruff_lsp",
     "ast_grep"
 }
@@ -45,15 +45,15 @@ for _, server in ipairs(default_list) do
     })
 end
 
-lspconfig["ccls"].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    init_options = {
-        highlight = {
-            lsRanges = true,
-        }
-    },
-})
+-- lspconfig["ccls"].setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     init_options = {
+--         highlight = {
+--             lsRanges = true,
+--         }
+--     },
+-- })
 
 vim.g.rustaceanvim = {
     server = {
@@ -73,6 +73,9 @@ vim.g.rustaceanvim = {
                 },
                 cargo = {
                     allFeatures = true,
+                },
+                checkOnSave = {
+                    command = "clippy",
                 }
             }
         }
