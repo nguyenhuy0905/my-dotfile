@@ -1,5 +1,6 @@
 {
-    "height": 30,
+    "height": 25,
+    "layer": "top",
     "modules-left": [
         "sway/workspaces",
         "sway/mode"
@@ -17,11 +18,15 @@
     ],
     "reload_style_on_change": true,
 
+    "sway/workspaces": {
+        "format": "{icon}"
+    },
+
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -58,6 +63,10 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
+    },
+
+    "sway/language": {
+        "format": "{short} 󰌌"
     },
 
     "tray": {

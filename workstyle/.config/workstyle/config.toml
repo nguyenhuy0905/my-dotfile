@@ -1,0 +1,64 @@
+# Config for workstyle
+#
+# Format:
+# "pattern" = "icon"
+#
+# The pattern will be used to match against the application name, class_id or WM_CLASS.
+# The icon will be used to represent that application.
+#
+# Note if multiple patterns are present in the same application name,
+# precedence is given in order of apparition in this file.
+
+# web icons
+"messenger" = "󰈎"
+"facebook" = "󰈌"
+"stack overflow" = "󰓌"
+"medium" = ""
+"google" = ""
+"firefox" = ""
+"chrome" = ""
+
+# file types
+"rust" = ""
+".toml" = ""
+".conf" = ""
+".ini" = ""
+".pdf" = "󰈦"
+".cpp" = ""
+".hs" = ""
+"makefile" = ""
+".cmake" = ""
+"cmakelists" = ""
+".cs" = ""
+# C is a very generic pattern so it sits at the bottom.
+".c" = ""
+
+# terminal icons
+"nvim" = ""
+"vifm" = ""
+"node" = ""
+"ghci" = ""
+"python" = ""
+"alacritty" = ""
+"kitty" = ""
+
+"thunar" = ""
+"dolphin" = ""
+"discover" = ""
+"libreoffice calc" = "󰱾"
+"libreoffice writer" = "󰈬"
+"libreoffice" = "󰈔"
+"gthumb" = ""
+"menu" = "󰍜"
+"calculator" = ""
+"kcalc" = ""
+"transmission" = ""
+"videostream" = ""
+"imv" = "󰋩"
+"mpv" = ""
+"music" = ""
+"disk usage" = "🖬"
+
+[other]
+fallback_icon = "🤨"
+deduplicate_icons = false

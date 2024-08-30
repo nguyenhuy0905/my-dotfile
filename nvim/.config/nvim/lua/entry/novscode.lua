@@ -212,7 +212,7 @@ return {
     },
     {
         "jackguo380/vim-lsp-cxx-highlight",
-        enabled = true,
+        enabled = false,
         event = VeryLazy,
         ft = { "c", "cpp", "objc", "objcpp", "cuda" },
     },
@@ -241,5 +241,17 @@ return {
         'mrcjkb/rustaceanvim',
         version = '^5', -- Recommended
         lazy = false,   -- This plugin is already lazy
+    },
+    {
+        'nvim-orgmode/orgmode',
+        event = 'VeryLazy',
+        ft = { 'org' },
+        config = function()
+            -- Setup orgmode
+            require('orgmode').setup({
+                org_agenda_files = '~/orgfiles/**/*',
+                org_default_notes_file = '~/orgfiles/refile.org',
+            })
+        end,
     }
 }
