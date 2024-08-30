@@ -21,7 +21,9 @@
 > Technically VS Code is configured. But it's only a text file.
 >
 
-- 2 wallpapers I use. Mainly [this one](./wallpaper.png =2560x1440).
+- 2 wallpapers I use.
+
+<img src="./example.png" alt="Example" width=2560 height=1440></img>.
 
 - For VS Code, since their extensions.json file contains some sensitive
 info (aka, info about my directory structure), I will take the list of
