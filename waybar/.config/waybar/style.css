@@ -31,14 +31,14 @@ button:hover {
 }
 
 /* you can set a style on hover for any module like this */
-#pulseaudio {
+#wireplumber {
     background-color: rgba(255, 255, 255, 1);
     border-radius: 15;
     padding: 0 5 0 5;
     margin: 0 5 0 5;
     color: rgba(64, 64, 64, 1);
 }
-#pulseaudio:hover {
+#wireplumber:hover {
     background-color: rgba(200, 200, 200, 1);
 }
 
@@ -53,10 +53,21 @@ button:hover {
     background-color: rgba(200, 200, 200, 1);
 }
 
+#bluetooth {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 15;
+    padding: 0 10 0 10;
+    margin: 0 5 0 5;
+    color: rgba(64, 64, 64, 1);
+}
+#bluetooth:hover {
+    background-color: rgba(200, 200, 200, 1);
+}
+
 #clock {
     background-color: rgba(255, 255, 255, 1);
     border-radius: 15;
-    padding: 0 5 0 5;
+    padding: 0 10 0 10;
     margin: 0 5 0 5;
     color: rgba(64, 64, 64, 1);
 }
@@ -67,7 +78,7 @@ button:hover {
 #language {
     background-color: rgba(255, 255, 255, 1);
     border-radius: 15;
-    padding: 0 5 0 5;
+    padding: 0 10 0 10;
     margin: 0 5 0 5;
     color: rgba(64, 64, 64, 1);
 }
