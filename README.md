@@ -1,6 +1,7 @@
 # My dotfiles
 
 ![An example](./example.png)
+![Hyprland example](./example-hyprland.png)
 
 ## What's in here?
 
@@ -10,6 +11,7 @@
   - Tmux
   - kitty
   - sway
+  - hyprland
   - swaylock
   - wob
   - sov

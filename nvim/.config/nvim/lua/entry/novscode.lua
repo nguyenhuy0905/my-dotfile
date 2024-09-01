@@ -253,5 +253,12 @@ return {
                 org_default_notes_file = '~/orgfiles/refile.org',
             })
         end,
-    }
+    },
+    {
+        'goolord/alpha-nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+        end
+    },
 }

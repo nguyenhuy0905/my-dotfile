@@ -31,7 +31,7 @@ local default_list = {
     "marksman",
     "html",
     "clangd",
-    "ruff_lsp",
+    "ruff",
     "ast_grep"
 }
 

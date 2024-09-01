@@ -1,33 +1,55 @@
 {
-    "height": 25,
-    "layer": "top",
+    "layer": "bottom",
+    "margin-top": 14,
+    "margin-bottom": 0,
     "modules-left": [
+        "hyprland/workspaces",
         "sway/workspaces",
-        "sway/mode"
+        "sway/mode",
+        "hyprland/submap"
     ],
     "modules-center": [
-        "sway/window"
+        "sway/window",
+        "hyprland/window"
     ],
     "modules-right": [
-        "wireplumber",
+        "pulseaudio",
         "network",
         "bluetooth",
         "clock",
         "sway/language",
+        "hyprland/language",
         "battery",
         "tray"
     ],
     "reload_style_on_change": true,
 
     "sway/window": {
-        "max-length": 50,
+        "max-length": 50
     },
 
     "sway/workspaces": {
-        "format": "{icon}"
+        "format": "{windows}"
+    },
+    
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "window-rewrite": {
+        "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+        "class<.*firefox>": "",
+        "class<.*firefox> title<.*github.*>": "", 
+        "class<kitty>": "", 
+        "class<kitty> title<nvim>": "",
+        "code": "󰨞"
+      }
     },
 
-    "wireplumber": {
+    "hyprland/window": {
+        "format": "{initialTitle}"
+        "active-only": true
+    },
+
+    "pulseaudio": {
         "format": "{icon} {volume}%",
         "scroll-step": 5.0,
         "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
@@ -47,7 +69,6 @@
         "format": " {status}",
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
