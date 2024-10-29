@@ -18,6 +18,11 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=ON
 export CC=clang
 export CXX=clang++
 
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx   
+export SDL_IM_MODULE=fcitx
+export GLFW_IM_MODULE=ibus
+
 # auto config files
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 . "$HOME/.atuin/bin/env"
