@@ -4,7 +4,6 @@
 }
 
 window#waybar {
-    /* background-color: rgba(0,0,0,0.1); */
     background: transparent;
     border-bottom: 0px;
     opacity: 0.75;
@@ -16,93 +15,99 @@ window#waybar.hidden {
 
 button {
     /* Avoid rounded borders under each button name */
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 15;
-    padding: 0 5 0 5;
-    margin: 0 5 0 5;
-    color: rgba(64, 64, 64, 1);
+    background-color: #1C1C3B;
+    border-radius: 5px;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 3px 0px 3px;
+    color: #C8C8C8;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background-color: rgba(200, 200, 200, 1);
+    background-color: #2F2F4D;
 }
 
 /* you can set a style on hover for any module like this */
 #pulseaudio {
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 15;
-    padding: 0 5 0 5;
-    margin: 0 5 0 5;
-    color: rgba(64, 64, 64, 1);
+    background-color: #1C1C3B;
+    border-radius: 5px;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 3px 0px 3px;
+    color: #C8C8C8;
 }
+
 #pulseaudio:hover {
-    background-color: rgba(200, 200, 200, 1);
+    background-color: #2F2F4D;
+}
+
+#pulseaudio-slider {
+    background-color: #1C1C3B;
+    border-radius: 5px;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 3px 0px 3px;
+    color: #C8C8C8;
+    min-width: 100px;
+    min-height: 25px;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: green;
 }
 
 #network {
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 15;
-    padding: 0 5 0 5;
-    margin: 0 5 0 5;
-    color: rgba(64, 64, 64, 1);
+    background-color: #1C1C3B;
+    border-radius: 5px;
+    padding: 0px 15px 0px 10px;
+    margin: 0px 3px 0px 3px;
+    color: #C8C8C8;
 }
 #network:hover {
-    background-color: rgba(200, 200, 200, 1);
+    background-color: #2F2F4D;
 }
 
 #bluetooth {
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 15;
-    padding: 0 10 0 10;
-    margin: 0 5 0 5;
-    color: rgba(64, 64, 64, 1);
+    background-color: #1C1C3B;
+    border-radius: 5px;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 3px 0px 3px;
+    color: #C8C8C8;
 }
 #bluetooth:hover {
-    background-color: rgba(200, 200, 200, 1);
+    background-color: #2F2F4D;
 }
 
 #clock {
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 15;
-    padding: 0 10 0 10;
-    margin: 0 5 0 5;
-    color: rgba(64, 64, 64, 1);
+    background-color: #1C1C3B;
+    border-radius: 5px;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 3px 0px 3px;
+    color: #C8C8C8;
 }
 #clock:hover {
-    background-color: rgba(200, 200, 200, 1);
-}
-
-#language {
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 15;
-    padding: 0 10 0 10;
-    margin: 0 5 0 5;
-    color: rgba(64, 64, 64, 1);
-}
-#language:hover {
-    background-color: rgba(200, 200, 200, 1);
+    background-color: #2F2F4D;
 }
 
 #battery {
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 15;
-    padding: 0 5 0 5;
-    margin: 0 5 0 5;
-    color: rgba(64, 64, 64, 1);
+    background-color: #1C1C3B;
+    border-radius: 5px;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 3px 0px 3px;
+    color: #C8C8C8;
 }
 #battery:hover {
-    background-color: rgba(200, 200, 200, 1);
+    background-color: #2F2F4D;
 }
 
-#workspaces button {
-    background-color: rgba(255, 255, 255, 1);
-    min-width: 24px;
-}
-
-#workspaces button:hover {
-    background-color: rgba(200, 200, 200, 1);
-}
+/* #workspaces button { */
+/*     background-color: rgba(255, 255, 255, 0.8); */
+/*     min-width: 24px; */
+/* } */
+/**/
+/* #workspaces button:hover { */
+/*     background-color: rgba(200, 200, 200, 0.8); */
+/* } */
 
 #battery,
 #cpu,
@@ -110,34 +115,31 @@ button:hover {
 #disk,
 #temperature,
 #backlight,
-#network {
-    padding: 0 15 0 10;
-}
-#pulseaudio {
-    padding: 0 10 0 10;
-}
 #wireplumber,
 #custom-media,
-#tray,
+/* Sway option iirc. Will config later. */
+/* #tray { */
+/*     border-radius: 5px; */
+/*     padding: 0px 5px 0px 5px; */
+/*     margin: 0px 5px 0px 5px; */
+/*     border-color: rgba(255, 255, 255, 1); */
+/* } */
 #mode,
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
 #language {
-    padding: 0 10 0 10;
+    padding: 0px 10px 0px 10px;
 }
 #mpd,
-#workspaces {
-}
-
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 5;
+    margin-left: 0px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 5;
+    margin-right: 0px;
 }
 
 @keyframes blink {

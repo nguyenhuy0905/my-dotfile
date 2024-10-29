@@ -1,6 +1,6 @@
 {
     "layer": "bottom",
-    "margin-top": 14,
+    "margin-top": 5,
     "margin-bottom": 0,
     "modules-left": [
         "hyprland/workspaces",
@@ -14,11 +14,10 @@
     ],
     "modules-right": [
         "pulseaudio",
+        "pulseaudio/slider",
         "network",
         "bluetooth",
         "clock",
-        "sway/language",
-        "hyprland/language",
         "battery",
         "tray"
     ],
@@ -33,28 +32,57 @@
     },
     
     "hyprland/workspaces": {
-      "format": "{icon}",
+      "format": "{icon} {windows}",
+      // in my experience, using titles is kinda inconsistent.
+      // for example, when you're not at GitHub's main page, the
+      // title doesn't even contain "github".
       "window-rewrite": {
-        "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-        "class<.*firefox>": "",
-        "class<.*firefox> title<.*github.*>": "", 
-        "class<kitty>": "", 
-        "class<kitty> title<nvim>": "",
-        "code": "󰨞"
-      }
+        "class<.*firefox>": " ",
+        "class<kitty>": " ", 
+        "class<konsole>": " ", 
+        "class<kitty> title<nvim>": " ",
+        "class<kitty> title<vim>": " ",
+        "class<kitty> title<tmux>": " ",
+        "class<kitty> title<python>": " ",
+        "class<kitty> title<node>": " ",
+        "class<kitty> title<ghci>": "󰲒 ",
+        "class<kitty> title<docker>": " ",
+        "class<code>": "󰨞 ",
+        "class<thunar>": " ",
+        "class<dolphin>": " ",
+        "class<systemsettings>": " ",
+        "class<spotify>": " ",
+        "class<emacs>": " ",
+        "class<thunderbird>": " ",
+        "class<discord>": " ",
+        "class<vesktop>": " ",
+        "class<steam>": " ",
+        "class<Caprine>": " "
+      },
+      // "format-icons": {
+      //     "active": " ",
+      //     "default": "󰣆 "
+      // }
     },
 
     "hyprland/window": {
-        "format": "{initialTitle}"
-        "active-only": true
+        "format": "{initialTitle}",
+        "active-only": true,
+        "icon": true,
+        "icon-size": 16
     },
-
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "scroll-step": 5.0,
         "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
         "format-muted": "",
         "format-icons": ["", "", ""]
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
     },
 
     "network": {
@@ -89,10 +117,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-
-    "sway/language": {
-        "format": "{short} 󰌌"
     },
 
     "tray": {
