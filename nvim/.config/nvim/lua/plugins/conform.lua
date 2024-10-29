@@ -7,6 +7,9 @@ conform.setup({
 		cpp = { "clang-format" },
 		cmake = { "cmake_format" },
 		lua = { "stylua" },
+        haskell = { "ormolu" },
+        python = { "ruff_fix", "ruff_format" },
+        plaintex = { "chktex" },
     },
 })
 

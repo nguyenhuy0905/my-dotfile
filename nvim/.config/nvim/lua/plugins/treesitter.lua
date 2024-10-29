@@ -33,9 +33,11 @@ require("nvim-treesitter.configs").setup({
         "gitignore",
         -- forced to use
         "python",
+        "latex",
         -- config files
         "yaml",
         "ini",
+        "hyprlang",
     },
     textobjects = {
         select = {

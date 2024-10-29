@@ -5,6 +5,9 @@ lint.linters_by_ft = {
     -- cmake = { "cmakelint" },
     markdown = { "markdownlint", "vale" },
     python = { "ruff" },
+    sh = { "shellcheck" },
+    haskell = { "hlint" },
+    plaintex = { "chktex" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {

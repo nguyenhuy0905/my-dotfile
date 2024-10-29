@@ -30,9 +30,10 @@ local default_list = {
     "bashls",
     "marksman",
     "html",
-    "clangd",
     "ruff",
-    "ast_grep"
+    "ast_grep",
+    "hyprls",
+    "texlab",
 }
 
 -- init default list
@@ -44,6 +45,20 @@ for _, server in ipairs(default_list) do
         -- offsetEncoding = "utf-16",
     })
 end
+
+require('lspconfig')['hls'].setup {
+    filetypes = { 'haskell', 'lhaskell', 'cabal' },
+}
+
+lspconfig["clangd"].setup {
+    cmd = {
+        "clangd",
+        "-j=8",
+        "--malloc-trim",
+        "--background-index",
+        "--pch-storage=memory",
+    }
+}
 
 -- lspconfig["ccls"].setup({
 --     on_attach = on_attach,

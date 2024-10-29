@@ -22,6 +22,8 @@ require("mason-lspconfig").setup({
         "ruff",
         "ruff_lsp",
         -- refactoring
-        "ast_grep"
+        "ast_grep",
+        -- bighead
+        "texlab"
     },
 })
