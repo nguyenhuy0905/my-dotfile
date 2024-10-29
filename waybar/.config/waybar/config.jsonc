@@ -53,11 +53,16 @@
         "class<systemsettings>": " ",
         "class<spotify>": " ",
         "class<emacs>": " ",
-        "class<thunderbird>": " ",
+        "class<.*thunderbird>": " ",
         "class<discord>": " ",
         "class<vesktop>": " ",
         "class<steam>": " ",
-        "class<Caprine>": " "
+        "class<Caprine>": " ",
+        "class<.*zapzap>": " ",
+        "class<*.PrismLauncher>": "󰍳 ",
+        "class<cmake-gui>": " ",
+        "class<evince>": " ",
+        "class<imv>": " "
       },
       // "format-icons": {
       //     "active": " ",
