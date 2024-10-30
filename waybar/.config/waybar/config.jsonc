@@ -59,15 +59,16 @@
         "class<steam>": " ",
         "class<Caprine>": " ",
         "class<.*zapzap>": " ",
-        "class<*.PrismLauncher>": "󰍳 ",
+        "class<.*PrismLauncher>": "󰍳 ",
         "class<cmake-gui>": " ",
         "class<evince>": " ",
-        "class<imv>": " "
+        "class<imv>": " ",
+        "class<FreeTube>": " "
       },
-      // "format-icons": {
-      //     "active": " ",
-      //     "default": "󰣆 "
-      // }
+      "format-icons": {
+          "active": " "
+          // "default": "󰣆 "
+      }
     },
 
     "hyprland/window": {
