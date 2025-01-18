@@ -180,16 +180,17 @@ return {
         },
         -- set up in lspconfig
     },
-    {
-        "RRethy/vim-illuminate",
-        config = function()
-            require("illuminate").configure({
-                filetypes_denylist = {
-                    "NvimTree",
-                },
-            })
-        end,
-    },
+    -- problematic plugin.
+    -- {
+    --     "RRethy/vim-illuminate",
+    --     config = function()
+    --         require("illuminate").configure({
+    --             filetypes_denylist = {
+    --                 "NvimTree",
+    --             },
+    --         })
+    --     end,
+    -- },
     {
         "luukvbaal/statuscol.nvim",
         config = function()

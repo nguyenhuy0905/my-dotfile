@@ -4,7 +4,6 @@ require("mason-lspconfig").setup({
         "lua_ls",
         -- low levels
         "rust_analyzer",
-        "cmake",
         "neocmake",
         -- web friends
         "html",
@@ -20,9 +19,6 @@ require("mason-lspconfig").setup({
         "efm",
         -- snek
         "ruff",
-        "ruff_lsp",
-        -- refactoring
-        "ast_grep",
         -- bighead
         "texlab"
     },
