@@ -14,8 +14,8 @@
   - hyprland
   - swaylock
   - wob
-  - sov
-  - workstyle
+  <!-- - sov -->
+  <!-- - workstyle -->
   - atuin
   - Vale
 
@@ -29,14 +29,31 @@
 info (aka, info about my directory structure), I will take the list of
 extensions I currently have instead.
   - These extensions can be installed via the [convenience script](./vscode-install-extensions.sh)
+  
+> [!NOTE]
+> As of now, some of the extensions in the script cannot be installed. It is
+> suspected that these extensions changed their names.
 
 ## Dependencies
 
 - These are (NeoVim) stuff that cannot be download through Lazy and/or Mason.
   - ccls (currently not in use)
   - clang/clang++
-  - clang-tools-extra (optional)
+    - While clangd can be downloaded with Mason, you can also use your package
+    manager to download.
+  - clang-tools-extra
   - npm
+  - ghcup (don't use the package manager - go to GHCup's website to get the
+  toolchain).
   - python3
+    - If your distro ships with python3.13+ by default, you need a separate
+    python3.12 install.
   - python3-venv
   - python3-pip
+  - dotnet
+  - go
+  - rustup
+
+- These are the stuff that need more configuration than just cloning and `stow`ing
+this repository:
+  - wob (create a socket and bind wob to it) (available on wob's GitHub page).
