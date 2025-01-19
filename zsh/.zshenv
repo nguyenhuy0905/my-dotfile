@@ -23,6 +23,10 @@ export QT_IM_MODULE=fcitx
 export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=ibus
 
+# being conservative.
+export HISTSIZE=250
+export SAVEHIST=250
+
 # auto config files
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 . "$HOME/.atuin/bin/env"
