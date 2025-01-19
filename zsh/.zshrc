@@ -157,3 +157,4 @@ vicd()
 alias neofetch=fastfetch
 # some jobs
 # eval $(thefuck --alias)
+eval "$(starship init zsh)"
