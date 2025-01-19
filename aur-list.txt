@@ -1,0 +1,7 @@
+catppuccin-sddm-theme-mocha
+eww
+eww-debug
+thinkfan
+thinkfan-debug
+yay
+yay-debug
