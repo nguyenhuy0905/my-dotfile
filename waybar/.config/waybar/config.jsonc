@@ -1,6 +1,6 @@
 {
     "layer": "bottom",
-    "margin-top": 5,
+    "margin-top": 0,
     "margin-bottom": 0,
     "modules-left": [
         "hyprland/workspaces",
@@ -72,7 +72,7 @@
     },
 
     "hyprland/window": {
-        "format": "{initialTitle}",
+        "format": "<span style=\"italic\" underline=\"single\">{initialTitle}</span>",
         "active-only": true,
         "icon": true,
         "icon-size": 16

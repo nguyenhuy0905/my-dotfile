@@ -1,114 +1,210 @@
 * {
+    background-color: transparent;
+    border-radius: 15px;
     font-family: "JetBrainsMono NF";
     font-size: 16px;
+    color: rgba(180, 180, 200, 0.8);
 }
 
 window#waybar {
-    background: transparent;
-    border-bottom: 0px;
-    opacity: 0.75;
+    background: rgba(25, 25, 100, 0.25);
+    /* background: transparent; */
+    border-radius: 0px;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
+box.modules-right {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 15px;
+}
+
 button {
-    /* Avoid rounded borders under each button name */
-    background-color: #1C1C3B;
-    border-radius: 5px;
-    padding: 0px 5px 0px 5px;
-    margin: 0px 3px 0px 3px;
-    color: #C8C8C8;
+    border-radius: 25px;
+    border: 4px solid rgba(100, 100, 200, 0.8);
+    margin: 5px;
+    color: rgba(200, 200, 200, 0.8);
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background-color: #2F2F4D;
+    background: rgba(47, 47, 78, 0.2);
 }
 
-/* you can set a style on hover for any module like this */
 #pulseaudio {
-    background-color: #1C1C3B;
-    border-radius: 5px;
-    padding: 0px 10px 0px 10px;
-    margin: 0px 3px 0px 3px;
-    color: #C8C8C8;
-}
-
-#pulseaudio:hover {
-    background-color: #2F2F4D;
+    border-radius: 25px 0px 0px 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 4px solid rgba(100, 100, 200, 0.8);
+    border-right-width: 0px;
 }
 
 #pulseaudio-slider {
-    background-color: #1C1C3B;
-    border-radius: 5px;
-    padding: 0px 10px 0px 10px;
-    margin: 0px 3px 0px 3px;
-    color: #C8C8C8;
     min-width: 100px;
-    min-height: 25px;
+    padding-right: 15px;
+    border-radius: 0px;
+    border: 4px solid rgba(100, 100, 200, 0.8);
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+
+#pulseaudio-slider trough {
+    background-color: rgba(50, 50, 50, 0.25);
 }
 
 #pulseaudio-slider highlight {
-    min-width: 10px;
-    border-radius: 5px;
-    background-color: green;
+    background-color: rgba(200, 200, 200, 0.8);
 }
 
 #network {
-    background-color: #1C1C3B;
-    border-radius: 5px;
-    padding: 0px 15px 0px 10px;
-    margin: 0px 3px 0px 3px;
-    color: #C8C8C8;
-}
-#network:hover {
-    background-color: #2F2F4D;
+    min-width: 50px;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 0px;
+    border: 4px solid rgba(100, 100, 200, 0.8);
+    border-left-width: 0px;
+    border-right-width: 0px;
 }
 
 #bluetooth {
-    background-color: #1C1C3B;
-    border-radius: 5px;
-    padding: 0px 10px 0px 10px;
-    margin: 0px 3px 0px 3px;
-    color: #C8C8C8;
-}
-#bluetooth:hover {
-    background-color: #2F2F4D;
+    min-width: 30px;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 0px;
+    border: 4px solid rgba(100, 100, 200, 0.8);
+    border-left-width: 0px;
+    border-right-width: 0px;
 }
 
 #clock {
-    background-color: #1C1C3B;
-    border-radius: 5px;
-    padding: 0px 10px 0px 10px;
-    margin: 0px 3px 0px 3px;
-    color: #C8C8C8;
-}
-#clock:hover {
-    background-color: #2F2F4D;
+    min-width: 50px;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 0px;
+    border: 4px solid rgba(100, 100, 200, 0.8);
+    border-left-width: 0px;
+    border-right-width: 0px;
 }
 
 #battery {
-    background-color: #1C1C3B;
-    border-radius: 5px;
-    padding: 0px 5px 0px 5px;
-    margin: 0px 3px 0px 3px;
-    color: #C8C8C8;
-}
-#battery:hover {
-    background-color: #2F2F4D;
+    min-width: 50px;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 0px;
+    border: 4px solid rgba(100, 100, 200, 0.8);
+    border-left-width: 0px;
+    border-right-width: 0px;
 }
 
+#tray {
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 0px 25px 25px 0px;
+    border: 4px solid rgba(100, 100, 200, 0.8);
+    border-left-width: 0px;
+    
+}
+
+#workspaces button {
+    background-color: rgba(50, 50, 100, 0.25);
+}
+
+#workspaces button.active {
+    background-color: rgba(50, 50, 100, 0.8);
+}
+
+/* you can set a style on hover for any module like this */
+/* #pulseaudio button { */
+/*     background-color: inherit; */
+/*     border: inherit; */
+/*     border-radius: inherit; */
+/*     padding: 0px 10px 0px 10px; */
+/*     margin: 0px 5px 0px 5px; */
+/*     color: inherit; */
+/* } */
+/**/
+/* #pulseaudio:hover { */
+/*     background-color: rgba(47, 47, 78, 0.2); */
+/* } */
+/**/
+/* #pulseaudio-slider { */
+/*     background-color: rgba(28, 28, 60, 0.35); */
+/*     border-radius: 25px; */
+/*     padding: 0px 10px 0px 10px; */
+/*     margin: 0px 3px 0px 3px; */
+/*     color: #C8C8C8; */
+/*     min-width: 100px; */
+/*     min-height: 25px; */
+/* } */
+/**/
+/* #pulseaudio-slider highlight { */
+/*     min-width: 10px; */
+/*     border-radius: 25px; */
+/*     background-color: gray; */
+/* } */
+/**/
+/* #pulseaudio-slider:hover { */
+    /* background-color: #2F2F4D; */
+/*     background-color: rgba(47, 47, 78, 0.2); */
+/* } */
+/**/
+/* #network { */
+/*     background-color: rgba(28, 28, 60, 0.35); */
+/*     border-radius: 25px; */
+/*     padding: 0px 15px 0px 10px; */
+/*     margin: 0px 3px 0px 3px; */
+/*     color: #C8C8C8; */
+/* } */
+/* #network:hover { */
+/*     background-color: rgba(47, 47, 78, 0.2); */
+/* } */
+/**/
+/* #bluetooth { */
+/*     background-color: rgba(28, 28, 60, 0.35); */
+/*     border-radius: 25px; */
+/*     padding: 0px 10px 0px 10px; */
+/*     margin: 0px 3px 0px 3px; */
+/*     color: #C8C8C8; */
+/* } */
+/* #bluetooth:hover { */
+/*     background-color: rgba(47, 47, 78, 0.2); */
+/* } */
+/**/
+/* #clock { */
+/*     background-color: rgba(28, 28, 60, 0.35); */
+/*     border-radius: 25px; */
+/*     padding: 0px 10px 0px 10px; */
+/*     margin: 0px 3px 0px 3px; */
+/*     color: #C8C8C8; */
+/* } */
+/* #clock:hover { */
+/*     background-color: rgba(47, 47, 78, 0.2); */
+/* } */
+/**/
+/* #battery { */
+/*     background-color: rgba(28, 28, 60, 0.35); */
+/*     border-radius: 25px; */
+/*     padding: 0px 5px 0px 5px; */
+/*     margin: 0px 3px 0px 3px; */
+/*     color: #C8C8C8; */
+/* } */
+/* #battery:hover { */
+/*     background-color: rgba(47, 47, 78, 0.2); */
+/* } */
+/**/
 /* #workspaces button { */
-/*     background-color: rgba(255, 255, 255, 0.8); */
+/*     background-color: rgba(28, 28, 60, 0.35); */
+    /* background-color: transparent; */
+/*     border-radius: 25px; */
 /*     min-width: 24px; */
 /* } */
 /**/
 /* #workspaces button:hover { */
-/*     background-color: rgba(200, 200, 200, 0.8); */
+/*     background: rgba(47, 47, 78, 0.2); */
 /* } */
-
 #battery,
 #cpu,
 #memory,
@@ -119,7 +215,7 @@ button:hover {
 #custom-media,
 /* Sway option iirc. Will config later. */
 /* #tray { */
-/*     border-radius: 5px; */
+/*     border-radius: 25px; */
 /*     padding: 0px 5px 0px 5px; */
 /*     margin: 0px 5px 0px 5px; */
 /*     border-color: rgba(255, 255, 255, 1); */
@@ -128,9 +224,9 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
-#language {
-    padding: 0px 10px 0px 10px;
-}
+/* #language { */
+/*     padding: 0px 10px 0px 10px; */
+/* } */
 #mpd,
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
