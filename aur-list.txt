@@ -1,6 +1,8 @@
 catppuccin-sddm-theme-mocha
 eww
 eww-debug
+rate-mirrors
+rate-mirrors-debug
 thinkfan
 thinkfan-debug
 yay

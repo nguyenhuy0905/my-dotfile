@@ -42,6 +42,7 @@ base
 base-devel
 bash
 bash-completion
+bat
 bc
 binutils
 bison
@@ -87,6 +88,7 @@ composefs
 convertlit
 coreutils
 cppdap
+cronie
 cryptsetup
 curl
 dav1d
@@ -229,6 +231,8 @@ hicolor-icon-theme
 hidapi
 highway
 hiredis
+htop
+http-parser
 hunspell
 hwdata
 hyphen
@@ -513,6 +517,7 @@ libfreeaptx
 libfreehand
 libgcrypt
 libgirepository
+libgit2
 libglvnd
 libgme
 libgpg-error
@@ -759,6 +764,7 @@ neovim
 netstandard-targeting-pack
 nettle
 networkmanager
+networkmanager-openvpn
 networkmanager-qt
 nftables
 ninja
@@ -773,6 +779,7 @@ nspr
 nss
 ocean-sound-theme
 ocl-icd
+oniguruma
 openal
 opencl-headers
 opencl-nvidia
@@ -784,11 +791,13 @@ openjpeg2
 openmp
 openssh
 openssl
+openvpn
 openxr
 opus
 orc
 os-prober
 ostree
+otf-hasklig-nerd
 oxygen
 oxygen-sounds
 p11-kit
@@ -818,6 +827,7 @@ pipewire-audio
 pipewire-jack
 pipewire-pulse
 pixman
+pkcs11-helper
 pkgconf
 plasma-activities
 plasma-activities-stats
@@ -946,6 +956,7 @@ rsync
 rtkit
 rtmpdump
 rubberband
+run-parts
 sbc
 sdbus-cpp
 sddm
@@ -984,6 +995,7 @@ spirv-tools
 sqlite
 sratom
 srt
+sshfs
 startup-notification
 steam
 stow
@@ -1019,6 +1031,7 @@ tree-sitter-query
 tree-sitter-vim
 tree-sitter-vimdoc
 tslib
+ttf-firacode-nerd
 ttf-hack
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
