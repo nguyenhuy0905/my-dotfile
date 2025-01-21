@@ -1,9 +1,5 @@
 {
     "layer": "top",
-    "margin-top": 5,
-    "margin-bottom": 0,
-    "margin-left": 10,
-    "margin-right": 0,
     "modules-left": [
         "hyprland/workspaces",
         "sway/workspaces",
