@@ -21,6 +21,24 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
+vim.o.guifont = "FiraCode Nerd Font,JetBrainsMono Nerd Font:h16"
+
+if vim.g.neovide then
+    vim.g.neovide_fullscreen = true
+    vim.g.neovide_cursor_smooth_blink = true
+    vim.g.neovide_cursor_animation_length = 0.05
+    vim.g.neovide_cursor_trail_size = 0.1
+    vim.g.neovide_cursor_vfx_mode = "railgun"
+    -- one blink lasts 0.75s with 0.45s off and 0.3s on.
+    local all_cfg = "a:blinkwait750-blinkoff450-blinkon300-Cursor/lCursor";
+    -- normal, visual, command-line insert: block.
+    -- insert, command-line insert, visual with "selection": thin bar.
+    -- replace, command-line replace, thin flat plate.
+    -- operator-pending: half-sized block.
+    local cursor_shape_cfg = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50";
+    CMD("set guicursor=" .. all_cfg..','..cursor_shape_cfg);
+end
+
 vim.filetype.add({
-  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+    pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
