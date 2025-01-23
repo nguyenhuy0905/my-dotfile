@@ -21,7 +21,11 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
+-- font
 vim.o.guifont = "FiraCode Nerd Font,JetBrainsMono Nerd Font:h16"
+-- I like it blurry
+vim.o.winblend = 10
+vim.o.pumblend = 10
 
 if vim.g.neovide then
     vim.g.neovide_fullscreen = true
@@ -36,7 +40,7 @@ if vim.g.neovide then
     -- replace, command-line replace, thin flat plate.
     -- operator-pending: half-sized block.
     local cursor_shape_cfg = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50";
-    CMD("set guicursor=" .. all_cfg..','..cursor_shape_cfg);
+    vim.o.guicursor=all_cfg..','..cursor_shape_cfg;
 end
 
 vim.filetype.add({

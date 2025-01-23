@@ -14,6 +14,7 @@ table.insert(vimgrep_arguments, "!**/.git/*")
 require("telescope").setup({
     defaults = {
         vimgrep_arguments = vimgrep_arguments,
+        winblend = 10,
         preview = {
             mime_hook = function(filepath, bufnr, opts)
                 local is_image = function(path)
