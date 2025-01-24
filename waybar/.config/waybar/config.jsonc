@@ -1,4 +1,4 @@
-{
+[{
     "layer": "top",
     "modules-left": [
         "hyprland/workspaces",
@@ -136,4 +136,4 @@
     "tray": {
         "spacing": 10
     }
-}
+}]
