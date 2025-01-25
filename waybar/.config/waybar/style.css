@@ -92,7 +92,7 @@ box.modules-right {
 
 #bluetooth {
     min-width: 30px;
-    background: rgba(50, 50, 150, 0.75);
+    background: @background;
     padding-left: 10px;
     padding-right: 15px;
     border-radius: 0px;
