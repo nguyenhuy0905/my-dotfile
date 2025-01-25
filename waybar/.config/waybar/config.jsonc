@@ -7,8 +7,7 @@
         "hyprland/submap"
     ],
     "modules-center": [
-        "sway/window",
-        "hyprland/window"
+        "custom/player"
     ],
     "modules-right": [
         "pulseaudio",
@@ -31,42 +30,23 @@
     
     "hyprland/workspaces": {
       "format": "{icon} {windows}",
-      // in my experience, using titles is kinda inconsistent.
-      // for example, when you're not at GitHub's main page, the
-      // title doesn't even contain "github".
-      "window-rewrite": {
-        "class<.*firefox>": " ",
-        "class<kitty>": " ", 
-        "class<konsole>": " ", 
-        "class<kitty> title<nvim>": " ",
-        "class<kitty> title<vim>": " ",
-        "class<kitty> title<tmux>": " ",
-        "class<kitty> title<python>": " ",
-        "class<kitty> title<node>": " ",
-        "class<kitty> title<ghci>": "󰲒 ",
-        "class<kitty> title<docker>": " ",
-        "class<code>": "󰨞 ",
-        "class<thunar>": " ",
-        "class<dolphin>": " ",
-        "class<systemsettings>": " ",
-        "class<spotify>": " ",
-        "class<emacs>": " ",
-        "class<.*thunderbird>": " ",
-        "class<discord>": " ",
-        "class<vesktop>": " ",
-        "class<steam>": " ",
-        "class<Caprine>": " ",
-        "class<.*zapzap>": " ",
-        "class<.*PrismLauncher>": "󰍳 ",
-        "class<cmake-gui>": " ",
-        "class<evince>": " ",
-        "class<imv>": " ",
-        "class<FreeTube>": " "
+      "active-only": true,
+      "persistent-workspaces": {
+          "eDP-1": [ 1, 3, 5 ],
+          "DP-2": [ 2, 4, 6 ]
+      },
+      "format-icons": {
+          "active": "<span> </span>",
+          "default": "<span color='#878787cc'> </span>"
       }
-      // "format-icons": {
-      //     "active": " "
-      //     // "default": "󰣆 "
-      // }
+    },
+
+    "custom/player": {
+        "format": "{}",
+        "max-length": 50,
+        "exec": "./scripts/module-player.sh",
+        "on-click": "playerctl play-pause",
+        "interval": 3
     },
 
     "hyprland/window": {

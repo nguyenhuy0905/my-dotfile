@@ -1,16 +1,37 @@
+@import url("./colors.css");
 * {
     border-radius: 15px;
     font-family: "Iosevka Nerd Font";
-    font-size: 20px;
-    color: rgba(180, 180, 200, 0.8);
+    font-size: 16px;
+    color: @foreground;
 }
 
 window#waybar {
+    background: @window-background; 
+}
+
+#workspaces {
+    background: @background;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: 3px solid @border-color;
+    border-radius: 25px;
+}
+
+#workspaces button {
     background: transparent;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+#custom-player {
+    background: @background; 
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: 3px solid @border-color;
+    border-radius: 25px;
 }
 
 box.modules-right {
@@ -19,33 +40,21 @@ box.modules-right {
     margin-right: 15px;
 }
 
-button {
-    border-radius: 25px;
-    border: 3px solid rgba(100, 100, 200, 0.8);
-    margin: 5px;
-    color: rgba(200, 200, 200, 0.8);
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: rgba(47, 47, 78, 0.2);
-}
-
 #pulseaudio {
     border-radius: 25px 0px 0px 25px;
-    background: rgba(50, 50, 150, 0.75);
+    background: @background;
     padding-left: 10px;
     padding-right: 10px;
-    border: 3px solid rgba(100, 100, 200, 0.8);
+    border: 3px solid @border-color;
     border-right-width: 0px;
 }
 
 #pulseaudio-slider {
     min-width: 100px;
-    background: rgba(50, 50, 150, 0.75);
+    background: @background; 
     padding-right: 15px;
     border-radius: 0px;
-    border: 3px solid rgba(100, 100, 200, 0.8);
+    border: 3px solid @border-color;
     border-left-width: 0px;
     border-right-width: 0px;
 }
@@ -67,16 +76,16 @@ button:hover {
     box-shadow: none;
     border: 1px solid black;
     border-right-width: 0px;
-    background-color: rgba(200, 200, 200, 0.8);
+    background-color: @foreground;
 }
 
 #network {
     min-width: 50px;
-    background: rgba(50, 50, 150, 0.75);
+    background: @background; 
     padding-left: 10px;
     padding-right: 15px;
     border-radius: 0px;
-    border: 3px solid rgba(100, 100, 200, 0.8);
+    border: 3px solid @border-color;
     border-left-width: 0px;
     border-right-width: 0px;
 }
@@ -87,18 +96,18 @@ button:hover {
     padding-left: 10px;
     padding-right: 15px;
     border-radius: 0px;
-    border: 3px solid rgba(100, 100, 200, 0.8);
+    border: 3px solid @border-color;
     border-left-width: 0px;
     border-right-width: 0px;
 }
 
 #clock {
     min-width: 50px;
-    background: rgba(50, 50, 150, 0.75);
+    background: @background;
     padding-left: 10px;
     padding-right: 15px;
     border-radius: 0px;
-    border: 3px solid rgba(100, 100, 200, 0.8);
+    border: 3px solid @border-color;
     border-left-width: 0px;
     border-right-width: 0px;
 }
@@ -106,52 +115,24 @@ button:hover {
 #tray {
     padding-left: 10px;
     padding-right: 15px;
-    background: rgba(50, 50, 150, 0.75);
+    background: @background;
     border-radius: 0px;
-    border: 3px solid rgba(100, 100, 200, 0.8);
+    border: 3px solid @border-color;
     border-right-width: 0px;
     border-left-width: 0px;
 }
 
 #battery {
     min-width: 50px;
-    background: rgba(50, 50, 150, 0.75);
+    background: @background;
     padding-left: 10px;
     padding-right: 15px;
     border-radius: 0px 25px 25px 0px;
-    border: 3px solid rgba(100, 100, 200, 0.8);
+    border: 3px solid @border-color;
     border-left-width: 0px;
-}
-
-#workspaces button {
-    background: rgba(50, 50, 150, 0.75);
-}
-
-#workspaces button.active {
-    background: rgba(25, 25, 125, 0.5);
-}
-
-/* Sway option iirc. Will config later. */
-/* #tray { */
-/*     border-radius: 25px; */
-/*     padding: 0px 5px 0px 5px; */
-/*     margin: 0px 5px 0px 5px; */
-/*     border-color: rgba(255, 255, 255, 1); */
-/* } */
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0px;
 }
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
