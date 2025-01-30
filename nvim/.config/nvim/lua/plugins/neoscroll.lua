@@ -1,4 +1,4 @@
 require("neoscroll").setup({
-    easing = "circular",
-    hide_cursor = false,
+  easing = "circular",
+  hide_cursor = false,
 })
