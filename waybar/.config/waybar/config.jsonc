@@ -1,5 +1,5 @@
 [{
-    "layer": "top",
+    "layer": "bottom",
     "modules-left": [
         "hyprland/workspaces",
         "sway/workspaces",
@@ -36,15 +36,15 @@
           "DP-2": [ 2, 4, 6 ]
       },
       "format-icons": {
-          "active": "<span> </span>",
-          "default": "<span color='#878787cc'> </span>"
+          "active": "<span color='#ac8fd7cc'> </span>",
+          "default": "<span color='#ac8fd7cc'> </span>"
       }
     },
 
     "custom/player": {
         "format": "{}",
         "max-length": 50,
-        "exec": "./scripts/module-player.sh",
+        "exec": "$XDG_CONFIG_HOME/waybar/scripts/module-player.sh",
         "on-click": "playerctl play-pause",
         "interval": 3
     },

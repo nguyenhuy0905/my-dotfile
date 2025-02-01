@@ -1,15 +1,16 @@
 #!/bin/bash
 
-if [[ ! $(playerctl status 2>/dev/null) ]]; then
-    printf ""
+pst=$(playerctl status 2>/dev/null)
+
+if [[ ! $? ]]; then
+    printf "NOO"
     exit 0
 fi
 
-pst=$(playerctl status)
+pmtd='playerctl metadata --format " {{ artist }} - {{ title }} "'
 
 case "${pst}" in
-    "Playing" ) printf "";;
-    "Paused" ) printf "";;
+    "Playing" ) printf "" && eval "$pmtd";;
+    "Paused" ) printf "" && eval "$pmtd";;
+    "Stopped" ) printf "";;
 esac
-
-playerctl metadata --format " {{ artist }} - {{ title }} "

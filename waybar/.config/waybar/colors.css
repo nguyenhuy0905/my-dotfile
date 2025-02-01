@@ -1,4 +1,4 @@
-@define-color foreground rgba(180, 180, 200, 0.8);
-@define-color background rgba(50, 50, 150, 0.75);
-@define-color window-background rgba(50, 50, 150, 0.35);
+@define-color foreground rgba(175, 145, 215, 0.8);
+@define-color background rgba(50, 50, 150, 0.35);
+@define-color window-background transparent;
 @define-color border-color rgba(100, 100, 200, 0.8);

@@ -2,12 +2,14 @@
 * {
     border-radius: 15px;
     font-family: "Iosevka Nerd Font";
-    font-size: 16px;
+    font-size: 14px;
     color: @foreground;
 }
 
 window#waybar {
     background: @window-background; 
+    /* background: transparent; */
+    border-radius: 0px;
 }
 
 #workspaces {
