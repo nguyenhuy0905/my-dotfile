@@ -12,12 +12,12 @@ export MANPAGER=nvimpager
 # my CMake options
 export CMAKE_GENERATOR=Ninja
 export CMAKE_BUILD_TYPE=Debug
-export CMAKE_CXX_COMPILER=clang++
-export CMAKE_C_COMPILER=clang
+export CMAKE_CXX_COMPILER=g++
+export CMAKE_C_COMPILER=gcc
 export CMAKE_EXPORT_COMPILE_COMMANDS=ON
 
-export CC=clang
-export CXX=clang++
+export CC=gcc
+export CXX=g++
 
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx   
