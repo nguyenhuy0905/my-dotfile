@@ -40,6 +40,9 @@ require("nvim-treesitter.configs").setup({
     "ini",
     "hyprlang",
   },
+  highlight = {
+    enable = true,
+  },
   textobjects = {
     select = {
       enable = true,

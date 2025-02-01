@@ -9,7 +9,7 @@ CMD("set number")
 CMD("set relativenumber")
 -- color
 CMD("set termguicolors")
-CMD.colorscheme("tokyonight")
+CMD.colorscheme("catppuccin")
 -- treesitter
 CMD("set foldmethod=expr")
 CMD("set foldexpr=nvim_treesitter#foldexpr()")
