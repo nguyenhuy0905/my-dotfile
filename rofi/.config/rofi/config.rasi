@@ -1,0 +1,10 @@
+configuration{
+  modi: "drun";
+  font: "FiraCode Nerd Font 14";
+}
+
+@theme "catppuccin-macchiato"
+
+entry {
+  placeholder: "Search...";
+}
