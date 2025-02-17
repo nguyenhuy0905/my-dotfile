@@ -1,0 +1,8 @@
+[language-server.clangd]
+command = "clangd"
+args = ["--clang-tidy",
+ "--experimental-modules-support",
+ "--malloc-trim",
+ "-j=8",
+ "--background-index",
+]
