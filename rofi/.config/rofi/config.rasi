@@ -1,10 +1,24 @@
 configuration{
   modi: "drun";
-  font: "FiraCode Nerd Font 14";
+  //  font: "FiraCode Nerd Font 14";
 }
 
 @theme "catppuccin-macchiato"
 
 entry {
   placeholder: "Search...";
+}
+
+element {
+  orientation: horizontal;
+  children: [element-icon, element-text];
+  spacing: 5px;
+}
+
+element-icon {
+  size: 2em;
+}
+
+element-text {
+  vertical-align: 0.5;
 }
