@@ -90,15 +90,6 @@ return {
     config = true,
   },
   {
-    "nvimdev/dashboard-nvim",
-    enabled = false,
-    event = "VimEnter",
-    config = function()
-      require("plugins.dashboard")
-    end,
-    dependencies = { { "nvim-tree/nvim-web-devicons" } },
-  },
-  {
     "nvim-tree/nvim-web-devicons",
   },
   {

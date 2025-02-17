@@ -20,10 +20,6 @@ map("n", "<leader>bf", builtin.buffers, { desc = "List buffers" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "Show all help tags" })
 map("n", "<leader>gf", builtin.git_files, { desc = "Find files in git project" })
 map("n", "<leader>bz", builtin.current_buffer_fuzzy_find, { desc = "Fuzzy find current buffer" })
--- telescope file browser
-if not vim.g.vscode then
-  map("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", { desc = "Telescope file_browser" })
-end
 -- toggleterm
 if not vim.g.vscode then
   map("n", "<A-h>", "<cmd>ToggleTerm<CR>", { desc = "Toggleterm toggle horizontal term" })
@@ -102,12 +98,6 @@ if not vim.g.vscode then
   map({ "i", "n", "v" }, "<F8>", "<cmd>DapStepOut<CR>", { desc = "DAP step out" })
   map({ "i", "n", "v" }, "<F9>", "<cmd>DapTerminate<CR>", { desc = "DAP terminate current debug session" })
   map({ "n", "v" }, "<leader>b", "<cmd>DapToggleBreakpoint<CR>", { desc = "DAP toggle breakpoint" })
-end
--- barbar
-if not vim.g.vscode then
-  map({ "n", "v" }, "<leader>q", "<cmd>BufferClose<CR>", { desc = "Close current buffer" })
-  map({ "n", "v" }, "<Tab>", "<cmd>BufferNext<CR>", { desc = "Goto next buffer" })
-  map({ "n", "v" }, "<S-Tab>", "<cmd>BufferPrevious<CR>", { desc = "Goto previous buffer" })
 end
 -- trouble
 if not vim.g.vscode then

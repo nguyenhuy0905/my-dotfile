@@ -55,7 +55,7 @@ return {
   },
   {
     "folke/lazydev.nvim",
-    ft = "lua",     -- only load on lua files
+    ft = "lua", -- only load on lua files
     opts = {
       library = {
         -- See the configuration section for more details
@@ -101,7 +101,7 @@ return {
       "rafamadriz/friendly-snippets",
     },
     -- follow latest release.
-    version = "v2.*",     -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
     opts = { history = true, updateevents = "TextChanged,TextChangedI" },
@@ -117,8 +117,8 @@ return {
       require("plugins.lspsaga")
     end,
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",       -- optional
-      "nvim-tree/nvim-web-devicons",           -- optional
+      "nvim-treesitter/nvim-treesitter", -- optional
+      "nvim-tree/nvim-web-devicons",     -- optional
     },
   },
   {
@@ -145,7 +145,7 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    version = "*",     -- Use for stability; omit to use `main` branch for the latest features
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
       require("plugins.nvim-surround")
@@ -164,13 +164,6 @@ return {
     },
     config = function()
       require("plugins.neotest")
-    end,
-  },
-  {
-    "nvimtools/none-ls.nvim",
-    ft = { "cmake" },
-    config = function()
-      require("plugins.null-ls")
     end,
   },
   {
@@ -213,14 +206,8 @@ return {
   },
   {
     "jackguo380/vim-lsp-cxx-highlight",
-    enabled = true,
+    enabled = false,
     ft = { "c", "cpp", "objc", "objcpp", "cuda" },
-  },
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    lazy = false,
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-    -- setup alongside telescope
   },
   {
     "ThePrimeagen/harpoon",
@@ -239,20 +226,8 @@ return {
   },
   {
     'mrcjkb/rustaceanvim',
-    version = '^5',     -- Recommended
-    lazy = false,       -- This plugin is already lazy
-  },
-  {
-    'nvim-orgmode/orgmode',
-    event = 'VeryLazy',
-    ft = { 'org' },
-    config = function()
-      -- Setup orgmode
-      require('orgmode').setup({
-        org_agenda_files = '~/orgfiles/**/*',
-        org_default_notes_file = '~/orgfiles/refile.org',
-      })
-    end,
+    version = '^5', -- Recommended
+    lazy = false,   -- This plugin is already lazy
   },
   {
     'goolord/alpha-nvim',
@@ -261,4 +236,16 @@ return {
       require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
     end
   },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
+  }
 }

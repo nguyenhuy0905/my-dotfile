@@ -34,6 +34,7 @@ local default_list = {
   "ast_grep",
   "hyprls",
   "texlab",
+  "racket_langserver"
 }
 
 -- init default list
@@ -57,6 +58,7 @@ lspconfig["clangd"].setup {
     "--malloc-trim",
     "--background-index",
     "--pch-storage=memory",
+    "--experimental-modules-support"
   }
 }
 

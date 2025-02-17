@@ -16,6 +16,7 @@ require("nvim-treesitter.configs").setup({
     "bash",
     "vim",
     "vimdoc",
+    "regex",
     -- web and friends
     "html",
     "css",
