@@ -168,3 +168,5 @@ alias ls=eza
 # some jobs
 # eval $(thefuck --alias)
 eval "$(starship init zsh)"
+
+source ~/catppuccin_macchiato-zsh-syntax-highlighting.zsh
