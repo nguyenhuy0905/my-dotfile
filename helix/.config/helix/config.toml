@@ -9,3 +9,9 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.file-picker]
+hidden = false
+git-ignore = false
+
+[editor.auto-pairs]
+'<' = '>'

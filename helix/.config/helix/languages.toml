@@ -1,3 +1,6 @@
+[[language]]
+indent = {tab-width = 2, unit = "  "}
+
 [language-server.clangd]
 command = "clangd"
 args = ["--clang-tidy",
