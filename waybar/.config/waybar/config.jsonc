@@ -36,8 +36,8 @@
           "DP-2": [ 2, 4, 6 ]
       },
       "format-icons": {
-          "active": "<span color='#ac8fd7cc'> </span>",
-          "default": "<span color='#ac8fd7cc'> </span>"
+          "active": "<span color='#eba0ac'> </span>",
+          "default": "<span color='#eba0ac'> </span>"
       }
     },
 
