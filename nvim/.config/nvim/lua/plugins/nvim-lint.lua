@@ -1,7 +1,7 @@
 local lint = require("lint")
 lint.linters_by_ft = {
-  c = { "clangtidy" },
-  cpp = { "clangtidy" },
+  -- c = { "clangtidy" },
+  -- cpp = { "clangtidy" },
   -- cmake = { "cmakelint" },
   markdown = { "markdownlint", "vale" },
   python = { "ruff" },
