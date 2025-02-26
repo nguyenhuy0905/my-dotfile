@@ -14,11 +14,15 @@ table.insert(vimgrep_arguments, "!**/.git/*")
 require("telescope").setup({
   defaults = {
     vimgrep_arguments = vimgrep_arguments,
+    file_ignore_patterns = {
+      "node_modules",
+      ".git"
+    },
     winblend = 10,
     preview = {
       mime_hook = function(filepath, bufnr, opts)
         local is_image = function(path)
-          local image_extensions = { "png", "jpg" }           -- Supported image formats
+          local image_extensions = { "png", "jpg" } -- Supported image formats
           local split_path = vim.split(path:lower(), '.', { plain = true })
           local extension = split_path[#split_path]
           return vim.tbl_contains(image_extensions, extension)
@@ -32,7 +36,7 @@ require("telescope").setup({
           end
           vim.fn.jobstart(
             {
-              "imv", filepath               -- Terminal image viewer command
+              "imv", filepath -- Terminal image viewer command
             },
             { on_stdout = send_output, stdout_buffered = true, pty = true })
         else
@@ -45,6 +49,13 @@ require("telescope").setup({
   extensions = {
   },
   pickers = {
+    find_files = {
+      find_command = { "fd",
+        "--hidden",
+        "--type", "f",
+        "--strip-cwd-prefix",
+      }
+    },
     buffers = {
       mappings = {
         n = {
@@ -56,6 +67,12 @@ require("telescope").setup({
   find_files = {
     hidden = true,
     no_ignore = true,
-    find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+    find_command = { "rg",
+      "--trim",
+      "--hidden",
+      "--files",
+      "--glob",
+      "!**/.git/*",
+    },
   },
 })
