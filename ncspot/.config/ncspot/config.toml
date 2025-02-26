@@ -1,0 +1,26 @@
+use_nerdfont = true
+notify = true
+
+[theme]
+background = "#313244"
+primary = "#CDD6F4"
+secondary = "#6C7086"
+title = "#CBA6F7"
+playing = "#CBA6F7"
+playing_selected = "#B4BEFE"
+playing_bg = "#11111B"
+highlight = "#F5C2E7"
+highlight_bg = "#000000"
+error = "#F9E2AF"
+error_bg = "#F38BA8"
+statusbar = "#11111B"
+statusbar_progress = "#CBA6F7"
+statusbar_bg = "#CBA6F7"
+cmdline = "#94E2D5"
+cmdline_bg = "#313244"
+
+[keybindings]
+"1" = "focus queue"
+"2" = "focus search"
+"3" = "focus library"
+"8" = "focus cover"
