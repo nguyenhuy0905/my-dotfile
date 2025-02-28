@@ -34,7 +34,8 @@ local default_list = {
   "ast_grep",
   "hyprls",
   "texlab",
-  "racket_langserver"
+  "racket_langserver",
+  "nushell"
 }
 
 -- init default list
