@@ -1,15 +1,15 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
- "logo": {
-     "type": "kitty",
-     "source": "$XDG_CONFIG_HOME/fastfetch/shogun3.webp",
-     "padding": {
-        "top": 1
-     },
-     "color": {
-       "1": "31",
-       "2": "31"
-     }
+  "logo": {
+    "type": "kitty",
+    "source": "$XDG_CONFIG_HOME/fastfetch/shogun4.webp",
+    "padding": {
+      "top": 1
+    },
+    "color": {
+     "1": "31",
+     "2": "31"
+    }
   },
   "display": {
     "separator": " ",
@@ -20,52 +20,59 @@
       "type": "title"
     },
     {
-        "type": "custom",
-        "format": "┌────────────────◉────────────────┐"
+      "type": "custom",
+      "format": "┌────────────────◉────────────────┐"
     },
     "break",
     {
-        "type": "wm",
-        "key": " {#33} ",
-        "format": "{2} -- {3}"
+      "type": "os",
+      "key": " {#33} "
     },
     {
-        "type": "terminal",
-        "key": " {#33} ",
-        "format": "{5} {6}"
+      "type": "wm",
+      "key": " {#33} ",
+      "format": "{2} -- {3}"
     },
     {
-        "type": "cpu",
-        "key": " {#33} ",
-        "format": "{1}"
+      "type": "terminal",
+      "key": " {#33} ",
+      "format": "{5} {6}"
     },
     {
-        "type": "gpu",
-        "key": " {#33}󰢮 ",
-        "format": "{#1}[{#35}{6}{#0}{#1}]{#0} {2}"
+      "type": "wallpaper"
     },
     {
-        "type": "memory",
-        "key": " {#33} "
+      "type": "cpu",
+      "key": " {#33} ",
+      "format": "{1}"
     },
     {
-        "type": "disk",
-        "key": " {#33} ",
-        "format": "{#1}[{#35}{10}{#0}{#1}]{#0} {1} / {2} ({#32}{3}{#0})"
+      "type": "gpu",
+      "key": " {#33}󰢮 ",
+      "format": "{#1}[{#35}{6}{#0}{#1}]{#0} {2}"
     },
     {
-        "type": "battery",
-        "key": " {#33} ",
-        "format": "{#32}{4}{#0} [{5}]"
+      "type": "memory",
+      "key": " {#33} "
     },
     {
-        "type": "uptime",
-        "key": " {#33}󰥔 "
+      "type": "disk",
+      "key": " {#33} ",
+      "format": "{#1}[{#35}{10}{#0}{#1}]{#0} {1} / {2} ({#32}{3}{#0})"
+    },
+    {
+      "type": "battery",
+      "key": " {#33} ",
+      "format": "{#32}{4}{#0} [{5}]"
+    },
+    {
+      "type": "uptime",
+      "key": " {#33}󰥔 "
     },
     "break",
     {
-        "type": "custom",
-        "format": "└────────────────◉────────────────┘"
+      "type": "custom",
+      "format": "└────────────────◉────────────────┘"
     }
   ]
 }
