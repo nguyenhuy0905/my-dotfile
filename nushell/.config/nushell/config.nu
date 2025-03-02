@@ -19,10 +19,11 @@
 $env.config.buffer_editor = "nvim"
 $env.config.show_banner = false
 $env.PATH = ($env.PATH | prepend "~/.local/share/bob/nvim-bin")
-$env.MANPAGER = (BATMAN_IS_BEING_MANPAGER=yes "/usr/bin/batman")
+$env.MANPAGER = "/usr/bin/batman"
 $env.MANROFFOPT = "-c"
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 source ~/.local/share/atuin/init.nu
 source ($nu.default-config-dir | path join "navi-integration.nu")
+source ./catppuccin_macchiato.nu
