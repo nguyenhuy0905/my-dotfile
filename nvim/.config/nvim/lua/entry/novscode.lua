@@ -239,7 +239,7 @@ return {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    config = function ()
+    config = function()
       require("plugins.noice")
     end,
     dependencies = {
@@ -250,5 +250,16 @@ return {
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     }
+  },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+
+      -- Only one of these is needed.
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+    config = true
   }
 }

@@ -9,5 +9,5 @@ require("toggleterm").setup({
     end
   end,
   border = "single",
-  shell = vim.o.shell,
+  shell = "nu",
 })

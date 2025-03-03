@@ -1,6 +1,4 @@
 local CMD = vim.cmd
--- shell
-vim.opt.shell = 'nu'
 -- i like 2-tabs
 CMD("set expandtab")
 CMD("tnoremap <C-n> <C-\\><C-n>")
