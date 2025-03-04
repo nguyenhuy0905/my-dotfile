@@ -237,6 +237,12 @@ return {
     end
   },
   {
+    "rcarriga/nvim-notify",
+    config = function()
+      require("plugins.notify")
+    end,
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     config = function()
@@ -254,7 +260,7 @@ return {
   {
     "NeogitOrg/neogit",
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
+      "nvim-lua/plenary.nvim",  -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
 
       -- Only one of these is needed.
