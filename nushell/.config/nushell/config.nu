@@ -19,9 +19,11 @@
 $env.config.buffer_editor = "nvim"
 $env.config.edit_mode = "vi"
 $env.PROMPT_INDICATOR = ""
-
+$env.STARSHIP_SHELL = "nu"
 $env.config.show_banner = false
-$env.PATH = $env.PATH | prepend "~/.local/share/bob/nvim-bin"
+if "~/.local/share/bob/nvim-bin" not-in $env.PATH {
+  $env.PATH = $env.PATH | prepend "~/.local/share/bob/nvim-bin"
+}
 
 # cmake stuff
 $env.CC = "gcc"
@@ -30,25 +32,20 @@ $env.CMAKE_LINKER_TYPE = "mold"
 $env.CMAKE_EXPORT_COMPILE_COMMANDS = "ON"
 $env.CMAKE_C_COMPILER_LAUNCHER = "ccache"
 $env.CMAKE_CXX_COMPILER_LAUNCHER = "ccache"
+$env.COMP_WORDBREAKS = ":"
 
-# Overwrite the default man to use batman.
-# When `pg` is present, `pg_or_pgnum` is the page number and takes an int, and
-# `pg` is the page name.
-# Otherwise, `pg_or_pgnum` is the page name.
-def man [pg_or_pgnum, pg?: string] {
-  match $pg {
-    null => {BAT_THEME='Catppuccin Macchiato' MANROFFOPT='-c' BATMAN_IS_BEING_PAGER='yes' ^batman $pg_or_pgnum}
-    _ =>  {BAT_THEME='Catppuccin Macchiato' MANROFFOPT='-c' BATMAN_IS_BEING_PAGER='yes' ^batman $pg_or_pgnum $pg}
-  }
+def --wrapped man [...rest] {
+  (BAT_THEME='Catppuccin Macchiato' MANROFFOPT='-c' BATMAN_IS_BEING_PAGER='yes'
+    ^batman ...$rest)
 }
-# overwrite fzf for colorscheme
-def fzf [...opts] {
-  FZF_DEFAULT_OPTS="
---color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796
---color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6
---color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796
---color=selected-bg:#494d64
---multi" ^fzf ...$opts
+
+def --wrapped fzf [...rest] {
+  (FZF_DEFAULT_OPTS="
+    --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796
+    --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6
+    --color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796
+    --color=selected-bg:#494d64
+    --multi" ^fzf ...$rest)
 }
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
