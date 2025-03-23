@@ -8,7 +8,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",     -- latest stable release
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
@@ -21,7 +21,33 @@ autocmd InsertEnter * :silent if fcitx5state == 2 | call system("fcitx5-remote -
 
 ]]
 
-require("entry")
-require("core.mappings")
+require("lazy").setup({
+  {
+    import = "colorscheme.init",
+    cond = true,
+  },
+  {
+    import = "entry.alwayson",
+    cond = function()
+      return true
+    end,
+  },
+  {
+    import = "entry.novscode",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+  {
+    import = "entry.vscode",
+    cond = function()
+      return vim.g.vscode
+    end,
+  },
+  install = { colorscheme = { "catppuccin" } },
+  checker = { enabled = true },
+})
+
 require("core.options")
+require("core.mappings")
 require("core.cmd")
