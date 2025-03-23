@@ -21,11 +21,11 @@ map("n", "<leader>fh", builtin.help_tags, { desc = "Show all help tags" })
 map("n", "<leader>gf", builtin.git_files, { desc = "Find files in git project" })
 map("n", "<leader>bz", builtin.current_buffer_fuzzy_find, { desc = "Fuzzy find current buffer" })
 -- toggleterm
-if not vim.g.vscode then
-  map("n", "<A-h>", "<cmd>ToggleTerm<CR>", { desc = "Toggleterm toggle horizontal term" })
-  map("n", "<A-v>", "<cmd>ToggleTerm direction=vertical<CR>", { desc = "Toggleterm toggle vertical term" })
-  map("n", "<A-i>", "<cmd>ToggleTerm direction=float<CR>", { desc = "Toggleterm toggle floating term" })
-end
+-- if not vim.g.vscode then
+--   map("n", "<A-h>", "<cmd>ToggleTerm<CR>", { desc = "Toggleterm toggle horizontal term" })
+--   map("n", "<A-v>", "<cmd>ToggleTerm direction=vertical<CR>", { desc = "Toggleterm toggle vertical term" })
+--   map("n", "<A-i>", "<cmd>ToggleTerm direction=float<CR>", { desc = "Toggleterm toggle floating term" })
+-- end
 -- lspconfig
 if not vim.g.vscode then
   map("n", "gD", vim.lsp.buf.declaration, { desc = "LSP Go to declaration" })
@@ -34,6 +34,44 @@ if not vim.g.vscode then
   map("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "LSP Show signature help" })
   map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { desc = "LSP Add workspace folder" })
   map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = "LSP Remove workspace folder" })
+  map("n", "<leader>e", vim.diagnostic.open_float, { desc = "LSP open diagnostic float" })
+end
+-- bufferline
+if not vim.g.vscode then
+  map("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<CR>")
+  map("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>")
+  map("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>")
+  map("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<CR>")
+  map("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<CR>")
+  map("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<CR>")
+end
+-- gitsigns
+if not vim.g.vscode then
+  --[[ local gitsigns = require("gitsigns") ]]
+  local gitsignscmd = function(cmd)
+    return "<cmd>Gitsigns " .. cmd .. "<CR>"
+  end
+  map("n", "<leader>hs", gitsignscmd("stage_hunk"))
+  map("n", "<leader>hr", gitsignscmd("reset_hunk"))
+  map("v", "<leader>hs", function()
+    gitsignscmd("stage_hunk {vim.fn.line('.'), vim.fn.line('v')}")
+  end)
+  map("v", "<leader>hr", function()
+    gitsignscmd("reset_hunk {vim.fn.line('.'), vim.fn.line('v')}")
+  end)
+  map("n", "<leader>hS", gitsignscmd("stage_buffer"))
+  map("n", "<leader>hu", gitsignscmd("undo_stage_hunk"))
+  map("n", "<leader>hR", gitsignscmd("reset_buffer"))
+  map("n", "<leader>hp", gitsignscmd("preview_hunk"))
+  map("n", "<leader>hb", function()
+    gitsignscmd("blame_line{full=true}")
+  end)
+  map("n", "<leader>tb", gitsignscmd("toggle_current_line_blame"))
+  map("n", "<leader>hd", gitsignscmd("diffthis"))
+  map("n", "<leader>hD", function()
+    gitsignscmd("diffthis('~')")
+  end)
+  map("n", "<leader>td", gitsignscmd("toggle_deleted"))
 end
 -- luasnip
 if not vim.g.vscode then
