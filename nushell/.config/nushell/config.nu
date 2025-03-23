@@ -33,11 +33,7 @@ $env.CMAKE_EXPORT_COMPILE_COMMANDS = "ON"
 $env.CMAKE_C_COMPILER_LAUNCHER = "ccache"
 $env.CMAKE_CXX_COMPILER_LAUNCHER = "ccache"
 $env.COMP_WORDBREAKS = ":"
-
-def --wrapped man [...rest] {
-  (BAT_THEME='Catppuccin Macchiato' MANROFFOPT='-c' BATMAN_IS_BEING_PAGER='yes'
-    ^batman ...$rest)
-}
+$env.MANPAGER = "nvim +Man!"
 
 def --wrapped fzf [...rest] {
   (FZF_DEFAULT_OPTS="
