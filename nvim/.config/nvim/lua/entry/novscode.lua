@@ -36,6 +36,7 @@ return {
     config = function()
       require("plugins.toggleterm")
     end,
+    enabled = false
   },
   {
     "hrsh7th/nvim-cmp",
@@ -94,6 +95,7 @@ return {
     config = function()
       require("plugins.gitsigns")
     end,
+    enabled = false,
   },
   {
     "L3MON4D3/LuaSnip",
@@ -131,6 +133,7 @@ return {
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
+    enabled = false,
   },
   {
     "wakatime/vim-wakatime",
@@ -174,16 +177,16 @@ return {
     -- set up in lspconfig
   },
   -- problematic plugin.
-  -- {
-  --     "RRethy/vim-illuminate",
-  --     config = function()
-  --         require("illuminate").configure({
-  --             filetypes_denylist = {
-  --                 "NvimTree",
-  --             },
-  --         })
-  --     end,
-  -- },
+  {
+      "RRethy/vim-illuminate",
+      config = function()
+          require("illuminate").configure({
+              filetypes_denylist = {
+                  "NvimTree",
+              },
+          })
+      end,
+  },
   {
     "luukvbaal/statuscol.nvim",
     config = function()
@@ -267,5 +270,5 @@ return {
       "nvim-telescope/telescope.nvim", -- optional
     },
     config = true
-  }
+  },
 }

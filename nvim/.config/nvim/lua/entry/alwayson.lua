@@ -1,30 +1,7 @@
 return {
-  -- colorschemes
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("colorscheme.catppuccin")
-    end,
-  },
-  {
-    "folke/tokyonight.nvim",
-    priority = 1000,
-    config = function()
-      require("colorscheme.tokyonight")
-    end,
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    priority = 1000,
-    config = function()
-      require("colorscheme.kanagawa")
-    end,
-  },
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
+    tag = "0.1.8",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("plugins.telescope")
@@ -46,14 +23,6 @@ return {
     "williamboman/mason.nvim",
     config = function()
       require("plugins.mason")
-    end,
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
     end,
   },
   {
@@ -94,8 +63,16 @@ return {
   },
   {
     "karb94/neoscroll.nvim",
+    enabled = function ()
+      return not vim.g.neovide
+    end,
     config = function()
       require("plugins.neoscroll")
     end,
+  },
+  -- For `plugins/markview.lua` users.
+  {
+      "OXY2DEV/markview.nvim",
+      lazy = false
   },
 }
