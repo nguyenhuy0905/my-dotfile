@@ -35,34 +35,6 @@ if not vim.g.vscode then
   map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { desc = "LSP Add workspace folder" })
   map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = "LSP Remove workspace folder" })
 end
--- gitsigns
-if not vim.g.vscode then
-  --[[ local gitsigns = require("gitsigns") ]]
-  local gitsignscmd = function(cmd)
-    return "<cmd>Gitsigns " .. cmd .. "<CR>"
-  end
-  map("n", "<leader>hs", gitsignscmd("stage_hunk"))
-  map("n", "<leader>hr", gitsignscmd("reset_hunk"))
-  map("v", "<leader>hs", function()
-    gitsignscmd("stage_hunk {vim.fn.line('.'), vim.fn.line('v')}")
-  end)
-  map("v", "<leader>hr", function()
-    gitsignscmd("reset_hunk {vim.fn.line('.'), vim.fn.line('v')}")
-  end)
-  map("n", "<leader>hS", gitsignscmd("stage_buffer"))
-  map("n", "<leader>hu", gitsignscmd("undo_stage_hunk"))
-  map("n", "<leader>hR", gitsignscmd("reset_buffer"))
-  map("n", "<leader>hp", gitsignscmd("preview_hunk"))
-  map("n", "<leader>hb", function()
-    gitsignscmd("blame_line{full=true}")
-  end)
-  map("n", "<leader>tb", gitsignscmd("toggle_current_line_blame"))
-  map("n", "<leader>hd", gitsignscmd("diffthis"))
-  map("n", "<leader>hD", function()
-    gitsignscmd("diffthis('~')")
-  end)
-  map("n", "<leader>td", gitsignscmd("toggle_deleted"))
-end
 -- luasnip
 if not vim.g.vscode then
   local ls = require("luasnip")
@@ -122,10 +94,10 @@ if not vim.g.vscode then
   map({ "i", "n", "v" }, "<F4>", "<cmd>lua require('neotest').run.stop()<cr>", { desc = "Neotest stop" })
 end
 -- tmux
-map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", { desc = "Navigate to left window" })
-map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { desc = "Navigate to below window" })
-map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Navigate to above window" })
-map("n", "<C-j>", "<cmd>TmuxNavigateRight<CR>", { desc = "Navigate to right window" })
+-- map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", { desc = "Navigate to left window" })
+-- map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { desc = "Navigate to below window" })
+-- map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Navigate to above window" })
+-- map("n", "<C-j>", "<cmd>TmuxNavigateRight<CR>", { desc = "Navigate to right window" })
 -- folding
 map("n", "zR", "<cmd>lua require('ufo').openAllFolds()<CR>", { desc = "Open all folds" })
 map("n", "zM", "<cmd>lua require('ufo').closeAllFolds()<CR>", { desc = "Close all folds" })

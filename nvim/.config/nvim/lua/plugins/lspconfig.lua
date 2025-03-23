@@ -10,12 +10,6 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities = vim.tbl_deep_extend("force", capabilities, {
-  offsetEncoding = { "utf-16" },
-  general = {
-    positionEncodings = { "utf-16" },
-  },
-})
 capabilities.textDocument.foldingRange = {
   dynamicRegistration = false,
   lineFoldingOnly = true,
