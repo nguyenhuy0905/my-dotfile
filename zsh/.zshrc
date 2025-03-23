@@ -170,3 +170,5 @@ alias ls=eza
 eval "$(starship init zsh)"
 
 source ~/catppuccin_macchiato-zsh-syntax-highlighting.zsh
+
+[ -f "/home/huynguyen/.ghcup/env" ] && . "/home/huynguyen/.ghcup/env" # ghcup-env
