@@ -44,6 +44,10 @@ if not vim.g.vscode then
   map("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<CR>")
   map("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<CR>")
   map("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<CR>")
+  map("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<CR>")
+  map("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<CR>")
+  map("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<CR>")
+  map("n", "<leader>0", "<cmd>BufferLineGoToBuffer 0<CR>")
 end
 -- gitsigns
 if not vim.g.vscode then

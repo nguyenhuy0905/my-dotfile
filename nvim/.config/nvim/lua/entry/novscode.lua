@@ -257,4 +257,12 @@ return {
     },
     config = true
   },
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function ()
+      require("plugins.bufferline")
+    end
+  }
 }
