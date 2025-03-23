@@ -1,5 +1,6 @@
 require("nvim-treesitter.configs").setup({
   ensure_installed = {
+    "haskell",
     -- low level
     "c",
     "cpp",
@@ -40,6 +41,8 @@ require("nvim-treesitter.configs").setup({
     "yaml",
     "ini",
     "hyprlang",
+    -- more shell
+    "nu"
   },
   highlight = {
     enable = true,
