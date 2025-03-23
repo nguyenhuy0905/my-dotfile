@@ -31,14 +31,6 @@ return {
     end,
   },
   {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    config = function()
-      require("plugins.toggleterm")
-    end,
-    enabled = false
-  },
-  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
@@ -95,7 +87,7 @@ return {
     config = function()
       require("plugins.gitsigns")
     end,
-    enabled = false,
+    enabled = true,
   },
   {
     "L3MON4D3/LuaSnip",
@@ -176,16 +168,15 @@ return {
     },
     -- set up in lspconfig
   },
-  -- problematic plugin.
   {
-      "RRethy/vim-illuminate",
-      config = function()
-          require("illuminate").configure({
-              filetypes_denylist = {
-                  "NvimTree",
-              },
-          })
-      end,
+    "RRethy/vim-illuminate",
+    config = function()
+      require("illuminate").configure({
+        filetypes_denylist = {
+          "NvimTree",
+        },
+      })
+    end,
   },
   {
     "luukvbaal/statuscol.nvim",
@@ -206,11 +197,6 @@ return {
     config = function()
       require("plugins.nvim-lint")
     end,
-  },
-  {
-    "jackguo380/vim-lsp-cxx-highlight",
-    enabled = false,
-    ft = { "c", "cpp", "objc", "objcpp", "cuda" },
   },
   {
     "ThePrimeagen/harpoon",
