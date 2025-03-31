@@ -8,12 +8,14 @@ local on_attach = function(client, bufnr)
   client.bufnr = bufnr
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.foldingRange = {
   dynamicRegistration = false,
   lineFoldingOnly = true,
 }
+
 
 -- the actual setup
 -- a table of 2 strings, the first is the config name, the second is the binary name in masonpath

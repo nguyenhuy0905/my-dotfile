@@ -16,7 +16,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = BUFOPEN,
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+      "saghen/blink.cmp",
+    },
     config = function()
       require("plugins.lspconfig")
     end,
@@ -45,6 +48,24 @@ return {
     config = function()
       require("plugins.nvim-cmp")
     end,
+    enabled = false,
+  },
+  {
+    'saghen/blink.cmp',
+    version = "1.*",
+    dependencies = {
+      "L3MON4D3/LuaSnip",
+      "xzbdmw/colorful-menu.nvim",
+    },
+    config = function()
+      require("plugins.blink")
+    end
+  },
+  {
+    "xzbdmw/colorful-menu.nvim",
+    config = function()
+      require("plugins.color-menu")
+    end
   },
   {
     "folke/lazydev.nvim",
@@ -261,7 +282,7 @@ return {
     'akinsho/bufferline.nvim',
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function ()
+    config = function()
       require("plugins.bufferline")
     end
   }
