@@ -32,6 +32,7 @@ return {
     config = function()
       require("plugins.ibl")
     end,
+    enabled = false,
   },
   {
     "numToStr/Comment.nvim",
