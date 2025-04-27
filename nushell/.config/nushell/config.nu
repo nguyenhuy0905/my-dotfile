@@ -35,6 +35,11 @@ $env.CMAKE_CXX_COMPILER_LAUNCHER = "ccache"
 $env.COMP_WORDBREAKS = ":"
 $env.MANPAGER = "nvim +Man!"
 
+# cargo stuff
+$env.RUSTC_WRAPPER = "sccache"
+$env.CARGO_TARGET_x86_LINUX_GNU_LINKER = "gold"
+$env.RUSTFLAGS = "-C link-arg=-fuse-ld=mold"
+
 def --wrapped fzf [...rest] {
   (FZF_DEFAULT_OPTS="
     --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796

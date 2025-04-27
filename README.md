@@ -34,7 +34,6 @@ extensions I currently have instead.
 ## Dependencies
 
 - These are (NeoVim) stuff that cannot be download through Lazy and/or Mason.
-  - ccls (currently not in use)
   - clang/clang++
     - While clangd can be downloaded with Mason, you can also use your package
     manager to download.
