@@ -4,7 +4,7 @@ require("config.colorscheme")
 
 -- start LSPs
 local enabled_lsp = {
-    'luals',
+    "luals",
 }
 
 for _, server in pairs(enabled_lsp) do

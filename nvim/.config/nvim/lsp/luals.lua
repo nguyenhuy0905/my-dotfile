@@ -4,26 +4,26 @@ local function luals_libs()
         vim.env.VIMRUNTIME,
     }
     for _, plugin in ipairs(require("lazy").plugins()) do
-        table.insert(ret, plugin.dir.."/lua")
+        table.insert(ret, plugin.dir .. "/lua")
     end
     return ret
 end
 
-vim.lsp.config['luals'] = {
-    cmd = { 'lua-language-server' },
-    filetypes = { 'lua' },
+vim.lsp.config["luals"] = {
+    cmd = { "lua-language-server" },
+    filetypes = { "lua" },
     root_markers = {
-        '.luarc.json',
-        '.luarc.jsonc',
-        '.git',
+        ".luarc.json",
+        ".luarc.jsonc",
+        ".git",
     },
     settings = {
         Lua = {
             runtime = {
-                version = 'LuaJIT',
+                version = "LuaJIT",
                 path = {
-                    'lua/?.lua',
-                    'lua/?/init.lua',
+                    "lua/?.lua",
+                    "lua/?/init.lua",
                 },
             },
             workspace = {
@@ -33,7 +33,7 @@ vim.lsp.config['luals'] = {
             },
             diagnostics = {
                 -- doesn't shout about vim as undefined
-                globals = { "vim" }
+                globals = { "vim" },
             },
             telemetry = {
                 enable = false,

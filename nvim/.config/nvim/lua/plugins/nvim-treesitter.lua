@@ -1,5 +1,5 @@
 return {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     opts = {
         ensure_installed = {
             "bash",
@@ -15,8 +15,8 @@ return {
             "lua",
             "make",
             "markdown",
-            "rust"
+            "rust",
         },
         sync_install = true,
-    }
+    },
 }
