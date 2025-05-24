@@ -3,7 +3,10 @@ local M = {
     event = "BufEnter",
     opts = {
         formatters_by_ft = {
+            c = { "clang-format" },
+            cpp = { "clang-format" },
             lua = { "stylua" },
+            rust = { "rustfmt" },
         },
     },
     format_on_save = {},
