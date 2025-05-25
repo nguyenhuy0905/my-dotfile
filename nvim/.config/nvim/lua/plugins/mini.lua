@@ -139,12 +139,20 @@ return {
                     --- @return string
                     local function get_file_info()
                         local ftype = vim.bo.filetype
-                        local icon, _, is_default =
+                        local icon, hl, is_default =
                             MiniIcons.get("filetype", ftype)
                         if is_default then
                             icon = ""
                         end
-                        return icon .. " " .. ftype
+                        return (
+                            "%#"
+                            .. hl
+                            .. "#"
+                            .. icon
+                            .. "%#MiniStatuslineFilename#"
+                        )
+                            .. " "
+                            .. ftype
                     end
                     --- @return string
                     local function get_diagnostics()
