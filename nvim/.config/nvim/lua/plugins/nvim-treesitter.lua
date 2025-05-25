@@ -4,6 +4,7 @@ return {
         ensure_installed = {
             "bash",
             "c",
+            "cmake",
             "cpp",
             "dockerfile",
             "git_config",
@@ -11,12 +12,15 @@ return {
             "gitattributes",
             "gitcommit",
             "gitignore",
+            "hyprlang",
             "json",
             "lua",
             "make",
             "markdown",
+            "nu",
             "rust",
         },
         sync_install = true,
+        auto_install = true,
     },
 }
