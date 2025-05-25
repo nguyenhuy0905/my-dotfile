@@ -1,8 +1,5 @@
 # My dotfiles
 
-![An example](./example.png)
-![Hyprland example](./example-hyprland.png)
-
 ## What's in here?
 
 - Dotfiles for my following programs
@@ -10,15 +7,12 @@
   - Zsh
   - Tmux
   - kitty
-  - sway
+  - sway (unmaintained)
   - hyprland
-  - swaylock
+  - swaylock (unmaintained)
   - wob
-  <!-- - sov -->
-  <!-- - workstyle -->
   - atuin
-  - Vale
-  - 2 wallpapers I use.
+  - Wallpapers I use.
 
 - For VS Code, since their extensions.json file contains some sensitive
 info (aka, info about my directory structure), I will take the list of
@@ -38,16 +32,6 @@ extensions I currently have instead.
     - While clangd can be downloaded with Mason, you can also use your package
     manager to download.
   - clang-tools-extra
-  - npm
-  - ghcup (don't use the package manager - go to GHCup's website to get the
-  toolchain).
-  - python3
-    - If your distro ships with python3.13+ by default, you need a separate
-    python3.12 install.
-  - python3-venv
-  - python3-pip
-  - dotnet
-  - go
   - rustup
 
 - These are the stuff that need more configuration than just cloning and `stow`ing
