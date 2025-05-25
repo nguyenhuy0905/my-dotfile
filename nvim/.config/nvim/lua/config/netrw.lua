@@ -65,12 +65,12 @@ local function get_file_name(line)
         col = 0
     end
     -- directory
-    local _, _, dir = line:find("^(.+)/")
+    local _, _, dir = nopipe:find("^(.+)/")
     if dir then
         return col, dir, true
     end
     -- symlink
-    local _, _, sym = line:find("^.+@%s*%-*>%s*(.+)")
+    local _, _, sym = nopipe:find("^.+@%s*%-*>%s*(.+)")
     if sym then
         return col, sym, false
     end
