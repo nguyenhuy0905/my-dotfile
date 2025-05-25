@@ -1,6 +1,6 @@
 return {
     "mfussenegger/nvim-lint",
-    event = "InsertEnter",
+    event = "BufEnter",
     config = function()
         require("lint").linters_by_ft = {
             bash = { "shellcheck" },
