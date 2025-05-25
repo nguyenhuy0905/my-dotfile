@@ -6,6 +6,7 @@ return {
         local gen_clues = miniclue.gen_clues
         -- text editing
         require("mini.ai").setup({})
+        require("mini.align").setup({})
         require("mini.basics").setup({
             options = {
                 basics = false,
@@ -239,7 +240,6 @@ return {
                 end,
             },
         })
-
         MiniIcons.tweak_lsp_kind()
 
         -- some nice keymaps
