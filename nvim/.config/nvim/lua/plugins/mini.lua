@@ -89,7 +89,148 @@ return {
         })
         require("mini.icons").setup({})
         require("mini.notify").setup({})
-        require("mini.statusline").setup({})
+        require("mini.statusline").setup({
+            content = {
+                active = function()
+                    --- @return string
+                    local function get_git_status()
+                        local stat =
+                            vim.b[vim.api.nvim_get_current_buf()].minigit_summary
+                        -- if stat.repo is nil, this is not a git repo
+                        if not stat or not stat.repo or not stat.head_name then
+                            return ""
+                        end
+
+                        local ret = "%#Keyword#󰘬 " .. stat.head_name
+                        return ret
+                    end
+                    --- @return string
+                    local function get_git_diff()
+                        local diff =
+                            vim.b[vim.api.nvim_get_current_buf()].minidiff_summary
+                        if not diff then
+                            return ""
+                        end
+                        local ret = ""
+                        if diff.add and diff.add > 0 then
+                            ret = ret
+                                .. "%#DiagnosticVirtualLinesOk# "
+                                .. diff.add
+                        end
+                        if diff.delete and diff.delete > 0 then
+                            ret = ret
+                                .. " %#DiagnosticVirtualLinesError# "
+                                .. diff.delete
+                        end
+                        if diff.change and diff.change > 0 then
+                            ret = ret
+                                .. " %#DiagnosticVirtualLinesWarn# "
+                                .. diff.change
+                        end
+                        return ret
+                    end
+                    --- @return string
+                    local function get_filename()
+                        if vim.bo.buftype == "terminal" then
+                            return "%t"
+                        end
+                        return "%t%m%r"
+                    end
+                    --- @return string
+                    local function get_file_info()
+                        local ftype = vim.bo.filetype
+                        local icon, _, is_default =
+                            MiniIcons.get("filetype", ftype)
+                        if is_default then
+                            icon = ""
+                        end
+                        return icon .. " " .. ftype
+                    end
+                    --- @return string
+                    local function get_diagnostics()
+                        local diag_list = vim.diagnostic.count(0)
+                        local ret = ""
+
+                        local count = diag_list[vim.diagnostic.severity.ERROR]
+                        if count then
+                            ret = ret
+                                .. "%#DiagnosticVirtualLinesError# "
+                                .. count
+                        end
+                        count = diag_list[vim.diagnostic.severity.WARN]
+                        if count then
+                            ret = ret
+                                .. "%#DiagnosticVirtualLinesWarn#  "
+                                .. count
+                        end
+                        count = diag_list[vim.diagnostic.severity.HINT]
+                        if count then
+                            ret = ret
+                                .. "%#DiagnosticVirtualLinesHint#  "
+                                .. count
+                        end
+                        count = diag_list[vim.diagnostic.severity.INFO]
+                        if count then
+                            ret = ret
+                                .. "%#DiagnosticVirtualLinesWarn#  "
+                                .. count
+                        end
+                        return ret
+                    end
+                    local mode, mode_hl =
+                        MiniStatusline.section_mode({ trunc_width = 50 })
+                    -- HACK: maybe I should use the table-like approach like mini does.
+                    -- This is literally setting the highlight group again and again.
+                    vim.api.nvim_set_hl(0, "StatuslineSeparator", {
+                        fg = vim.fn.synIDattr(vim.fn.hlID(mode_hl), "bg"),
+                        bg = vim.fn.synIDattr(
+                            vim.fn.hlID("MiniStatuslineFilename"),
+                            "bg"
+                        ),
+                    })
+                    local search = "%#StatuslineSeparator#%#"
+                        .. mode_hl
+                        .. "#  %l:%c"
+                    return MiniStatusline.combine_groups({
+                        {
+                            hl = mode_hl,
+                            strings = { mode, "%#StatuslineSeparator#" },
+                        },
+                        {
+                            hl = "MiniStatuslineFilename",
+                            strings = {
+                                get_git_status(),
+                                get_git_diff(),
+                            },
+                        },
+                        "%<",
+                        {
+                            hl = "MiniStatuslineFilename",
+                            strings = { get_filename() },
+                        },
+                        "%=",
+                        {
+                            hl = "MiniStatuslineFilename",
+                            strings = {
+                                get_diagnostics(),
+                            },
+                        },
+                        {
+                            hl = "MiniStatuslineFilename",
+                            strings = {
+                                get_file_info(),
+                            },
+                        },
+                        {
+                            hl = "MiniStatuslineFilename",
+                            strings = {
+                                search,
+                            },
+                        },
+                    })
+                end,
+            },
+        })
 
         MiniIcons.tweak_lsp_kind()
 
