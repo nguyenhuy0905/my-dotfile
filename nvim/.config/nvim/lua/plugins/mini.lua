@@ -1,4 +1,3 @@
--- ensure there's a symlink
 return {
     "echasnovski/mini.nvim",
     version = false,
@@ -60,8 +59,10 @@ return {
                 delay = 10,
             },
         })
+        require("mini.diff").setup({})
         require("mini.pick").setup({})
         require("mini.git").setup({})
+        require("mini.jump").setup({})
         require("mini.jump2d").setup({})
         -- appearances
         require("mini.hipatterns").setup({
@@ -91,5 +92,45 @@ return {
         require("mini.statusline").setup({})
 
         MiniIcons.tweak_lsp_kind()
+
+        -- some nice keymaps
+
+        -- pickers
+        vim.keymap.set(
+            { "n" },
+            "<Leader>ff",
+            MiniPick.builtin.files,
+            { desc = "MiniPick files" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>gf",
+            MiniExtra.pickers.git_files,
+            { desc = "MiniPick git files" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>h",
+            MiniPick.builtin.help,
+            { desc = "MiniPick help" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>gl",
+            MiniPick.builtin.grep_live,
+            { desc = "MiniPick live grep" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>gr",
+            MiniPick.builtin.grep,
+            { desc = "MiniPick grep" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>bf",
+            MiniPick.builtin.buffers,
+            { desc = "MiniPick live grep" }
+        )
     end,
 }

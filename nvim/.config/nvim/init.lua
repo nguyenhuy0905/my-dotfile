@@ -1,5 +1,6 @@
 require("config.lazy")
 require("config.colorscheme")
+require("config.netrw")
 -- config.options required in config.lazy already
 
 -- start LSPs
@@ -57,3 +58,6 @@ vim.keymap.set(
     vim.lsp.buf.declaration,
     { desc = "LSP goto declaration" }
 )
+vim.keymap.set({ "n" }, "<Leader>ex", function()
+    vim.cmd("Explore")
+end, { desc = "Open netrw" })
