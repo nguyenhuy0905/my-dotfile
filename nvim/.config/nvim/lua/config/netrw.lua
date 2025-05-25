@@ -91,7 +91,6 @@ local function render_netrw(bufnr)
         end
         assert(line:len() > 0, "Line shouldn't be empty")
         local col, trimmed, is_dir = get_file_name(line)
-        print(#trimmed)
         local icon, hl = get_icon_info(trimmed, is_dir)
         vim.api.nvim_buf_set_extmark(bufnr, ns, i - 1, col, {
             id = i,
