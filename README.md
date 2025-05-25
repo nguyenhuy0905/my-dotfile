@@ -7,12 +7,11 @@
   - Zsh
   - Tmux
   - kitty
-  - sway (unmaintained)
   - hyprland
-  - swaylock (unmaintained)
   - wob
   - atuin
   - Wallpapers I use.
+  - and some more
 
 - For VS Code, since their extensions.json file contains some sensitive
 info (aka, info about my directory structure), I will take the list of
