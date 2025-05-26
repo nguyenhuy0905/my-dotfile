@@ -1,6 +1,7 @@
 require("config.lazy")
 require("config.colorscheme")
 require("config.netrw")
+require("config.keymaps")
 -- config.options required in config.lazy already
 
 -- start LSPs
