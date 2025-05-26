@@ -71,7 +71,7 @@ return {
         vim.keymap.set(
             { "n" },
             "<Leader>dg",
-            builtin.buffers,
+            builtin.diagnostics,
             { desc = "Telescope diagnostics" }
         )
         vim.keymap.set(
