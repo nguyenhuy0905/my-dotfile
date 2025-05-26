@@ -89,6 +89,15 @@ return {
             hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
         })
         require("mini.icons").setup({})
+        require("mini.indentscope").setup({
+            draw = {
+                delay = 10,
+                animation = require("mini.indentscope").gen_animation.none(),
+            },
+            options = {
+                try_as_border = true,
+            },
+        })
         require("mini.notify").setup({})
         require("mini.statusline").setup({
             content = {
