@@ -20,7 +20,7 @@ local M = {
         }
         dap.configurations.c = {
             {
-                name = "Launch",
+                name = "Launch (GDB)",
                 type = "gdb",
                 request = "launch",
                 program = function()
@@ -33,11 +33,25 @@ local M = {
                 cwd = "${workspaceFolder}",
                 stopAtBeginningOfMainSubprogram = false,
             },
+            {
+                name = "Launch (LLDB)",
+                type = "lldb",
+                request = "launch",
+                program = function()
+                    return vim.fn.input({
+                        prompt = "Path to executable: ",
+                        default = vim.fn.getcwd(0),
+                        completion = "file",
+                    })
+                end,
+                cwd = "${workspaceFolder}",
+                stopOnEntry = false,
+            },
         }
         dap.configurations.cpp = dap.configurations.c
         dap.configurations.rust = {
             {
-                name = "Launch",
+                name = "Launch (GDB)",
                 type = "rustgdb",
                 request = "launch",
                 program = function()
@@ -49,6 +63,7 @@ local M = {
                 end,
                 cwd = "${workspaceFolder}",
             },
+            -- do I really want LLDB for this one?
         }
     end,
 }
