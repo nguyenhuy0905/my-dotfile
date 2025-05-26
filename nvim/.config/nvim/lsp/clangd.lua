@@ -1,5 +1,6 @@
 -- shameless copy from lspconfig
 -- maybe I should just use lspconfig
+
 local function switch_source_header(bufnr)
     local method_name = "textDocument/switchSourceHeader"
     local client = vim.lsp.get_clients({ bufnr = bufnr, name = "clangd" })[1]
@@ -71,14 +72,13 @@ vim.lsp.config["clangd"] = {
         "compile_commands.json",
         ".git",
     },
-    capabilities = {
+    capabilities = require("blink.cmp").get_lsp_capabilities({
         textDocument = {
             completion = {
                 editsNearCursor = true,
             },
-            codeAction = {},
         },
-    },
+    }),
     offset_encoding = "utf-8",
     on_attach = function()
         vim.api.nvim_buf_create_user_command(

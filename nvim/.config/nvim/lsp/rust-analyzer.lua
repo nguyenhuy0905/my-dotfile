@@ -26,6 +26,7 @@ vim.lsp.config["rust-analyzer"] = {
             },
         }
     end,
+    capabilities = require("blink.cmp").get_lsp_capabilities(),
     on_attach = function()
         vim.api.nvim_buf_create_user_command(0, "LspCargoReload", function()
             reload_workspace(0)

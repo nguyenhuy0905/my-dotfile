@@ -17,6 +17,7 @@ vim.lsp.config["luals"] = {
         ".luarc.jsonc",
         ".git",
     },
+    capabilities = require("blink.cmp").get_lsp_capabilities(),
     settings = {
         Lua = {
             runtime = {
