@@ -4,16 +4,11 @@ require("config.netrw")
 require("config.keymaps")
 -- config.options required in config.lazy already
 
--- start LSPs
-local enabled_lsp = {
+vim.lsp.enable({
     "luals",
     "clangd",
     "rust-analyzer",
-}
-
-for _, server in pairs(enabled_lsp) do
-    vim.lsp.enable(server)
-end
+})
 
 -- LSP-related keymaps
 vim.keymap.set({ "n" }, "grn", vim.lsp.buf.rename, { desc = "LSP rename" })
