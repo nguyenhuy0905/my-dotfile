@@ -61,6 +61,14 @@ return {
             },
         })
         require("mini.diff").setup({})
+        require("mini.files").setup({
+            options = {
+                use_as_default_explorer = false,
+            },
+            windows = {
+                preview = true,
+            },
+        })
         require("mini.git").setup({})
         require("mini.jump").setup({})
         require("mini.jump2d").setup({})
@@ -248,5 +256,9 @@ return {
                 end,
             },
         })
+        -- keymaps
+        vim.keymap.set({ "n" }, "<Leader>fe", function()
+            MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
+        end)
     end,
 }
