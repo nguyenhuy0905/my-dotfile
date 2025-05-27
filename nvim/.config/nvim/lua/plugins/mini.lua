@@ -1,6 +1,6 @@
 return {
     "echasnovski/mini.nvim",
-    version = false,
+    version = "*",
     config = function()
         local miniclue = require("mini.clue")
         local gen_clues = miniclue.gen_clues
