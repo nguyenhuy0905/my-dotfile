@@ -5,7 +5,7 @@ require("config.keymaps")
 -- config.options required in config.lazy already
 
 vim.lsp.enable({
-    "luals",
+    "lua_ls",
     "clangd",
     "rust-analyzer",
 })
