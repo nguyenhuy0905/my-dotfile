@@ -15,6 +15,19 @@ return {
         local ts = require("telescope")
         local builtin = require("telescope.builtin")
         ts.setup({
+            defaults = {
+                vimgrep_arguments = {
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--smart-case",
+                    "--hidden",
+                    "--follow",
+                },
+            },
             extensions = {
                 fzf = {
                     fuzzy = true,
