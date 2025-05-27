@@ -42,11 +42,13 @@ local function get_file_name(line)
         local _, _, sym = line:find("^(.+)@%s+")
         if sym then
             local dest = vim.uv.fs_readlink(sym)
+            --- @diagnostic disable-next-line: param-type-mismatch
             local temp = vim.uv.fs_readlink(dest)
             while temp do
                 dest = temp
                 temp = vim.uv.fs_readlink(dest)
             end
+            --- @diagnostic disable-next-line: return-type-mismatch
             return 0, dest, false
         end
         -- normal file
