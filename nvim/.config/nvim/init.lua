@@ -55,5 +55,9 @@ vim.keymap.set(
     { desc = "LSP goto declaration" }
 )
 vim.keymap.set({ "n" }, "<Leader>ex", function()
-    vim.cmd("Explore")
+    if not pcall(function()
+        vim.cmd("Rexplore")
+    end) then
+        vim.cmd("Explore")
+    end
 end, { desc = "Open netrw" })
