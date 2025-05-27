@@ -59,7 +59,7 @@ local function get_file_name(line)
         local _, _, file = line:find("^(.+)" .. meta)
         return 0, file, false
     end
-    local _, col = line:find("^[|%s]*")
+    local _, col = line:find("^[|│%s]*")
     local nopipe = line:sub(col + 1, #line)
     if not col then
         col = 0
