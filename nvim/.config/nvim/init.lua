@@ -7,7 +7,7 @@ require("config.keymaps")
 vim.lsp.enable({
     "lua_ls",
     "clangd",
-    "rust-analyzer",
+    "rust_analyzer",
 })
 
 -- LSP-related keymaps
