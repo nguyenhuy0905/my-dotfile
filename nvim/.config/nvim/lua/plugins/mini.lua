@@ -5,7 +5,7 @@ return {
         local miniclue = require("mini.clue")
         local gen_clues = miniclue.gen_clues
         -- text editing
-        require("mini.ai").setup({})
+        -- require("mini.ai").setup({})
         require("mini.align").setup({})
         require("mini.basics").setup({
             options = {
@@ -22,6 +22,8 @@ return {
         require("mini.bracketed").setup({})
         require("mini.clue").setup({
             triggers = {
+                -- auto completion
+                { mode = "i", keys = "<C-x>" },
                 -- leader
                 { mode = "n", keys = "<Leader>" },
                 { mode = "x", keys = "<Leader>" },
@@ -39,6 +41,9 @@ return {
                 -- z
                 { mode = "n", keys = "z" },
                 { mode = "x", keys = "z" },
+                -- v
+                { mode = "n", keys = "v" },
+                { mode = "x", keys = "v" },
                 -- s - surround
                 { mode = "n", keys = "s" },
                 -- [ and ] - moving with brackets
