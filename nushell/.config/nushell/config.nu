@@ -21,10 +21,6 @@ $env.config.edit_mode = "vi"
 $env.PROMPT_INDICATOR = ""
 $env.STARSHIP_SHELL = "nu"
 $env.config.show_banner = false
-if "~/.local/share/bob/nvim-bin" not-in $env.PATH {
-  $env.PATH = $env.PATH | prepend "~/.local/share/bob/nvim-bin"
-}
-
 # cmake stuff
 $env.CC = "gcc"
 $env.CXX = "g++"
