@@ -2,5 +2,5 @@ fork = true
 srgb = true
 
 [font]
-normal = ["ComicShannsMono Nerd Font", "JetBrainsMono Nerd Font", "FiraCode Nerd Font Mono"]
+normal = ["JetBrainsMono Nerd Font"]
 size = 14
