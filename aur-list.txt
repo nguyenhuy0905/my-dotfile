@@ -7,12 +7,9 @@ docker-desktop-debug
 gf2-git
 gf2-git-debug
 grub-customizer
-haskell-data-array-byte
 python-patch-ng
 python-pluginbase
 rate-mirrors-debug
-rose-pine-cursor
 rose-pine-hyprcursor
-sfp-ui-bin
 thinkfan
 yay-debug
