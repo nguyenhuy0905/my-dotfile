@@ -7,6 +7,6 @@ return {
         max_lines = 2,
         line_numbers = true,
         trim_scope = "outer",
-        mode = "topline",
+        mode = "cursor",
     },
 }

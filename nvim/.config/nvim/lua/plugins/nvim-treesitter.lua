@@ -49,17 +49,18 @@ return {
                     keymaps = {
                         ["af"] = "@function.outer",
                         ["if"] = "@function.inner",
+                        ["at"] = "@call.outer",
+                        ["it"] = "@call.inner",
+                        ["ac"] = "@comment.outer",
+                        ["ic"] = "@comment.inner",
                         ["is"] = "@class.inner",
                         ["as"] = "@class.outer",
                         ["az"] = {
                             query = "@fold",
                             query_group = "folds",
-                            desc = "Fold",
                         },
                         ["ip"] = "@parameter.inner",
                         ["ap"] = "@parameter.outer",
-                        ["ib"] = "@_start",
-                        ["ie"] = "@_end",
                     },
                 },
                 move = {
@@ -67,16 +68,14 @@ return {
                     goto_next_start = {
                         ["]f"] = "@function.outer",
                         ["]s"] = "@class.outer",
+                        ["]t"] = "@call.outer",
                         ["]z"] = {
                             query = "@fold",
                             query_group = "folds",
-                            desc = "Next fold",
+                            desc = "Goto next fold @fold",
                         },
-                        ["ic"] = "@comment.inner",
-                        ["ac"] = "@comment.outer",
+                        ["]c"] = "@comment.outer",
                         ["]p"] = "@parameter.inner",
-                        ["]b"] = "@_start",
-                        ["]e"] = "@_end",
                     },
                     goto_next_end = {
                         ["]F"] = "@function.outer",
@@ -84,10 +83,9 @@ return {
                         ["]Z"] = {
                             query = "@fold",
                             query_group = "folds",
+                            desc = "Goto previous fold @fold",
                         },
                         ["]P"] = "@parameter.inner",
-                        ["]B"] = "@_start",
-                        ["]E"] = "@_end",
                     },
                     goto_previous_start = {
                         ["[f"] = "@function.outer",
@@ -97,8 +95,6 @@ return {
                             query_group = "folds",
                         },
                         ["[p"] = "@parameter.inner",
-                        ["[b"] = "@_start",
-                        ["[e"] = "@_end",
                     },
                     goto_previous_end = {
                         ["[F"] = "@function.outer",
@@ -108,8 +104,6 @@ return {
                             query_group = "folds",
                         },
                         ["[P"] = "@parameter.inner",
-                        ["[B"] = "@_start",
-                        ["[E"] = "@_end",
                     },
                 },
             },

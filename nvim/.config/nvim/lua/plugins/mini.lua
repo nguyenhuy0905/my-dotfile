@@ -12,6 +12,9 @@ return {
                 basics = false,
                 extra_ui = true,
             },
+            mappings = {
+                basics = false,
+            },
         })
         require("mini.comment").setup({})
         require("mini.extra").setup({})
@@ -19,7 +22,9 @@ return {
         require("mini.surround").setup({})
         require("mini.pairs").setup({})
         -- general workflow
-        require("mini.bracketed").setup({})
+        require("mini.bracketed").setup({
+            file = { suffix = "" },
+        })
         require("mini.clue").setup({
             triggers = {
                 -- auto completion
@@ -75,7 +80,11 @@ return {
             },
         })
         require("mini.git").setup({})
-        require("mini.jump").setup({})
+        require("mini.jump").setup({
+            mappings = {
+                repeat_jump = ";",
+            },
+        })
         require("mini.jump2d").setup({})
         -- appearances
         require("mini.hipatterns").setup({
