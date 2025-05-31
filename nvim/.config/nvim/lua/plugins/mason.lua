@@ -1,5 +1,6 @@
 local M = {
     "mason-org/mason.nvim",
+    version = "*",
     opts = {},
 }
 
