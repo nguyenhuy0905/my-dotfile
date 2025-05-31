@@ -7,7 +7,6 @@ local M = {
 -- these are stuff I don't already have local
 local install_list = {
     "stylua",
-    "cspell",
     "lua-language-server",
 }
 
