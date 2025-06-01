@@ -5,7 +5,6 @@ return {
         local miniclue = require("mini.clue")
         local gen_clues = miniclue.gen_clues
         -- text editing
-        -- require("mini.ai").setup({})
         require("mini.align").setup({})
         require("mini.basics").setup({
             options = {
@@ -120,6 +119,7 @@ return {
             },
         })
         require("mini.notify").setup({})
+        require("mini.pick").setup({})
         require("mini.statusline").setup({
             content = {
                 active = function()
@@ -271,8 +271,44 @@ return {
             },
         })
         -- keymaps
+        vim.keymap.set(
+            { "n" },
+            "<Leader>ff",
+            MiniPick.builtin.files,
+            { desc = "Mini pick files" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>gf",
+            MiniExtra.pickers.git_files,
+            { desc = "Mini pick git files" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>h",
+            MiniPick.builtin.help,
+            { desc = "Mini pick help" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>h",
+            MiniExtra.pickers.diagnostic,
+            { desc = "Mini pick diagnostic" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>gl",
+            MiniPick.builtin.grep_live,
+            { desc = "Mini pick grep live" }
+        )
+        vim.keymap.set(
+            { "n" },
+            "<Leader>bf",
+            MiniPick.builtin.buffers,
+            { desc = "Mini pick buffers" }
+        )
         vim.keymap.set({ "n" }, "<Leader>fe", function()
             MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
-        end)
+        end, { desc = "Mini file explorer" })
     end,
 }
