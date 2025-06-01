@@ -1,3 +1,6 @@
+vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+
 local MiniIcons = require("mini.icons")
 
 --- @param path string Path to file/directory
