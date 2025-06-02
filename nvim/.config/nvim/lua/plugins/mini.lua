@@ -291,7 +291,7 @@ return {
         )
         vim.keymap.set(
             { "n" },
-            "<Leader>h",
+            "<Leader>dg",
             MiniExtra.pickers.diagnostic,
             { desc = "Mini pick diagnostic" }
         )
