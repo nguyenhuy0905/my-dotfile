@@ -1,5 +1,6 @@
 local M = {
     "mfussenegger/nvim-dap",
+    version = "*",
     config = function()
         -- DAP setup
         local dap = require("dap")

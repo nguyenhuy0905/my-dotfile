@@ -1,6 +1,7 @@
 local M = {
     "stevearc/conform.nvim",
     event = "BufEnter",
+    version = "*",
     opts = {
         formatters_by_ft = {
             c = { "clang-format" },

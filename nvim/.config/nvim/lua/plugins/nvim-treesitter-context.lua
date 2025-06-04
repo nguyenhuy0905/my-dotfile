@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter-context",
+    version = "*",
     lazy = true,
     opts = {
         enable = true,
