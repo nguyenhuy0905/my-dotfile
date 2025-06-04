@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    version = "*",
     build = ":TSUpdate",
     dependencies = {
         "nvim-treesitter/nvim-treesitter-textobjects",
