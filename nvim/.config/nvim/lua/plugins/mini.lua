@@ -118,6 +118,7 @@ return {
                 try_as_border = true,
             },
         })
+        require("mini.misc").setup({})
         require("mini.notify").setup({})
         require("mini.pick").setup({})
         require("mini.statusline").setup({
