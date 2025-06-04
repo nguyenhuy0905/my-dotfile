@@ -8,6 +8,7 @@ local M = {
 local install_list = {
     "stylua",
     "lua-language-server",
+    "jdtls",
 }
 
 vim.api.nvim_create_user_command("MasonInstallListed", function(_)
