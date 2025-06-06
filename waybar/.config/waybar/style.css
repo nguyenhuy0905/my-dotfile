@@ -1,140 +1,103 @@
 @import url("./colors.css");
 * {
-    border-radius: 15px;
-    font-family: "Iosevka Nerd Font";
-    font-size: 14px;
-    color: @foreground;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.module {
+    background-color: @base;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 7px;
+    opacity: 0.85;
+    border-style: solid;
 }
 
 window#waybar {
-    background: @window-background; 
-    /* background: transparent; */
-    border-radius: 0px;
+    background-color: transparent;
+    color: @text;
 }
 
 #workspaces {
-    background: @background;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    border: 3px solid @border-color;
-    border-radius: 5px;
+    margin-left: 5px;
+    border-bottom-width: 2px;
+    border-color: @mauve;
 }
 
 #workspaces button {
-    background: transparent;
+    margin: 2px 2px 4px 2px;
 }
 
-#custom-player {
-    background: @background; 
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    border: 3px solid @border-color;
-    border-radius: 5px;
+#workspaces button.active {
+    background-color: @mauve;
+    transition: background-color 0.5s;
+    color: @base;
 }
 
-box.modules-right {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-right: 10px;
+#window {
+    padding: 0px 10px 0px 10px;
+    border-radius: 7px;
+    color: @mauve;
+    border-bottom-width: 2px;
+    border-color: @mauve;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    box-shadow: 0px 0px;
 }
 
 #pulseaudio {
-    border-radius: 5px 0px 0px 5px;
-    background: @background;
     padding-left: 10px;
-    padding-right: 10px;
-    border: 3px solid @border-color;
-    border-right-width: 0px;
-}
-
-#pulseaudio-slider {
-    min-width: 100px;
-    background: @background; 
-    padding-right: 15px;
-    border-radius: 0px;
-    border: 3px solid @border-color;
-    border-left-width: 0px;
-    border-right-width: 0px;
-}
-
-#pulseaudio-slider slider {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-#pulseaudio-slider trough {
-    min-height: 5px;
-    background-color: rgba(50, 50, 50, 0.25);
-}
-
-#pulseaudio-slider highlight {
-    min-height: 5px;
-    border-radius: 5px 0px 0px 5px;
-    box-shadow: none;
-    border: 1px solid black;
-    border-right-width: 0px;
-    background-color: @foreground;
+    padding-right: 5px;
+    border-radius: 7px 0px 0px 7px;
+    color: @red;
+    border-bottom-width: 2px;
+    border-color: @red;
 }
 
 #network {
-    min-width: 50px;
-    background: @background; 
-    padding-left: 10px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 0px;
-    border: 3px solid @border-color;
-    border-left-width: 0px;
-    border-right-width: 0px;
+    color: @green;
+    border-bottom-width: 2px;
+    border-color: @green;
 }
 
 #bluetooth {
-    min-width: 30px;
-    background: @background;
-    padding-left: 10px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 0px;
-    border: 3px solid @border-color;
-    border-left-width: 0px;
-    border-right-width: 0px;
+    color: @blue;
+    border-bottom-width: 2px;
+    border-color: @blue;
 }
 
 #clock {
-    min-width: 50px;
-    background: @background;
-    padding-left: 10px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 0px;
-    border: 3px solid @border-color;
-    border-left-width: 0px;
-    border-right-width: 0px;
-}
-
-#tray {
-    padding-left: 10px;
-    padding-right: 15px;
-    background: @background;
-    border-radius: 0px;
-    border: 3px solid @border-color;
-    border-right-width: 0px;
-    border-left-width: 0px;
+    color: @yellow;
+    border-bottom-width: 2px;
+    border-color: @yellow;
 }
 
 #battery {
-    min-width: 50px;
-    background: @background;
-    padding-left: 10px;
-    padding-right: 15px;
-    border-radius: 0px 5px 5px 0px;
-    border: 3px solid @border-color;
-    border-left-width: 0px;
+    padding-left: 5px;
+    padding-right: 10px;
+    border-radius: 0px;
+    color: @sapphire;
+    border-bottom-width: 2px;
+    border-color: @sapphire;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0px;
+#tray {
+    padding-left: 15px;
+    padding-right: 10px;
+    margin-right: 5px;
+    border-radius: 0px 7px 7px 0px;
+    border-bottom-width: 2px;
+    border-color: @text;
 }
