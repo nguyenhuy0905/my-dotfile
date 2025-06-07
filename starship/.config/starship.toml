@@ -1,6 +1,19 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
 # add stuff you use under here.
 palette = "catppuccin_mocha"
-
+format = """
+$os\
+$username\
+$hostname\
+$directory\
+$cmd_duration\n
+"""
+right_format = """
+$git_commit\
+$git_status\
+$git_branch
+"""
 # The nerd-font-symbols preset stuff
 
 [aws]
@@ -43,6 +56,8 @@ symbol = " "
 symbol = " "
 
 [git_branch]
+format = "on [$symbol$branch(:$remote_branch)]($style)"
+style = "bold mauve"
 symbol = " "
 
 [git_commit]
@@ -64,6 +79,8 @@ symbol = " "
 symbol = " "
 
 [hostname]
+ssh_only = false
+style = "bold green"
 ssh_symbol = " "
 
 [java]
@@ -96,17 +113,20 @@ symbol = " "
 [ocaml]
 symbol = " "
 
+[os]
+disabled = false
+
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
 AlmaLinux = " "
 Amazon = " "
 Android = " "
-Arch = " "
+Arch = "[ ](blue)"
 Artix = " "
 CachyOS = " "
 CentOS = " "
-Debian = " "
+Debian = "[ ](red)"
 DragonFly = " "
 Emscripten = " "
 EndeavourOS = " "
@@ -128,7 +148,7 @@ NetBSD = " "
 NixOS = " "
 Nobara = " "
 OpenBSD = "󰈺 "
-openSUSE = " "
+openSUSE = "[ ](green)"
 OracleLinux = "󰌷 "
 Pop = " "
 Raspbian = " "
@@ -137,8 +157,8 @@ RedHatEnterprise = " "
 RockyLinux = " "
 Redox = "󰀘 "
 Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
+SUSE = "[ ](green)"
+Ubuntu = "[ ](peach)"
 Unknown = " "
 Void = " "
 Windows = "󰍲 "
