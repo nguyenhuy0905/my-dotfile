@@ -1,19 +1,18 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-add_newline = true
 # add stuff you use under here.
+add_newline = true
 palette = "catppuccin_mocha"
 format = """
+$character"""
+right_format = """
 $os\
 $username\
 $hostname\
 $directory\
-$cmd_duration\n
-"""
-right_format = """
+$cmd_duration\
 $git_commit\
 $git_status\
-$git_branch
-"""
+$git_branch"""
 # The nerd-font-symbols preset stuff
 
 [aws]
