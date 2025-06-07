@@ -24,7 +24,6 @@ return {
                 "lua",
                 "make",
                 "markdown",
-                "nu",
                 "rust",
             },
             sync_install = true,
