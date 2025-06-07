@@ -1,9 +1,10 @@
 configuration{
   modi: "drun";
   //  font: "FiraCode Nerd Font 14";
+  font: "JetBrainsMono Nerd Font 12";
 }
 
-@theme "catppuccin-macchiato"
+@theme "catppuccin-mocha"
 
 entry {
   placeholder: "Search...";
