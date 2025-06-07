@@ -2,6 +2,14 @@
 set -gx MANPAGER 'nvim +Man!'
 set -gx PAGER 'bat'
 
+# env
+set -gx EDITOR "nvim"
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_DATA_HOME "$XDG_CONFIG_HOME/.local/share"
+set -gx XDG_CACHE_HOME "$XDG_CONFIG_HOME/cache"
+set -gx PATH "$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/.config/local/share/nvim/mason/bin"
+
+
 # cmake stuff
 set -gx CMAKE_BUILD_TYPE 'Debug'
 set -gx CMAKE_C_COMPILER 'gcc'
@@ -20,6 +28,12 @@ set -gx RUSTC_WRAPPER 'sccache'
 set -gx CARGO_TARGET_x86_LINUX_GNU_LINKER 'mold'
 set -gx RUSTFLAGS '-C link-args=-fuse-ld=mold'
 
+# fcitx stuff
+set -gx XMODIFIERS "@im=fcitx"
+set -gx QT_IM_MODULE "fcitx"
+set -gx SDL_IM_MODULE "fcitx"
+set -gx GLFW_IM_MODULE "ibus"
+
 # fzf looks
 set -gx FZF_DEFAULT_OPTS "\
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
@@ -31,7 +45,7 @@ set -gx FZF_DEFAULT_OPTS "\
 if status is-interactive
     # Commands to run in interactive sessions can go here
     starship init fish | source
-    source "./fzf.fish"
+    source "$XDG_CONFIG_HOME/fish/fzf.fish"
     fish_vi_key_bindings insert
     fastfetch
 end
