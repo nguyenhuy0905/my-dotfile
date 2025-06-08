@@ -43,6 +43,17 @@
     "clock": {
         "format": "{:%T %a %x}",
         "interval": 1,
+        "tooltip-format": "<span size='10pt' font='JetBrainsMono Nerd Font'>{calendar}</span>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "format": {
+                "months":     "<span color='#fab387'><b>{}</b></span>",
+                "days":       "<span color='#b4befe'><b>{}</b></span>",
+                "weekdays":   "<span color='#cba6f7'><b>{}</b></span>",
+                "today":      "<span color='#89dceb'><b><u>{}</u></b></span>"
+            }
+        },
     },
     "battery": {
         "format": "{capacity} {icon}",
