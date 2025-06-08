@@ -48,10 +48,10 @@
             "mode"          : "year",
             "mode-mon-col"  : 3,
             "format": {
-                "months":     "<span color='#fab387'><b>{}</b></span>",
+                "months":     "<span color='#f9e2af'><b>{}</b></span>",
                 "days":       "<span color='#b4befe'><b>{}</b></span>",
                 "weekdays":   "<span color='#cba6f7'><b>{}</b></span>",
-                "today":      "<span color='#89dceb'><b><u>{}</u></b></span>"
+                "today":      "<span color='#f9e2af'><b><u>{}</u></b></span>"
             }
         },
     },
