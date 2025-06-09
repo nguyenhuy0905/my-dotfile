@@ -1,5 +1,9 @@
 return {
-    "echasnovski/mini.nvim",
+    -- "echasnovski/mini.nvim",
+    url = "https://github.com/nguyenhuy0905/mini.nvim",
+    dependencies = {
+        "3rd/image.nvim",
+    },
     version = "*",
     config = function()
         local miniclue = require("mini.clue")
