@@ -17,7 +17,7 @@
 info (aka, info about my directory structure), I will take the list of
 extensions I currently have instead.
   - These extensions can be installed via the [convenience script](./vscode-install-extensions.sh)
-  
+
 > [!NOTE]
 > As of now, some of the extensions in the script cannot be installed using
 > the VS Code version shipped by package managers (eg, `pacman`).

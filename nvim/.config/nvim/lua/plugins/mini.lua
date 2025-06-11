@@ -1,9 +1,7 @@
 return {
-    -- "echasnovski/mini.nvim",
-    url = "https://github.com/nguyenhuy0905/mini.nvim",
-    dependencies = {
-        "3rd/image.nvim",
-    },
+    "echasnovski/mini.nvim",
+    -- url = "https://github.com/nguyenhuy0905/mini.nvim",
+    -- dir = vim.fn.getenv("HOME") .. "/code/build-from-src/mini.nvim",
     version = "*",
     config = function()
         local miniclue = require("mini.clue")
