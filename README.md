@@ -1,15 +1,17 @@
 # My dotfiles
 
+![nice example](./example.png)
+
 ## What's in here?
 
 - Dotfiles for my following programs
   - Neovim
-  - Zsh
-  - Tmux
+  - Zsh (unused)
+  - Tmux (unused)
   - kitty
   - hyprland
   - wob
-  - atuin
+  - atuin (unused)
   - Wallpapers I use.
   - and some more
 
