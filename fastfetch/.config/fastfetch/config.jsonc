@@ -5,14 +5,11 @@
   },
   "logo": {
     "type": "kitty",
-    "source": "$XDG_CONFIG_HOME/fastfetch/shogun3.webp",
+    "source": "$XDG_CONFIG_HOME/fastfetch/shogun*.webp",
     "padding": {
-      "top": 1
+      "top": 0
     },
-    "color": {
-     "1": "31",
-     "2": "31"
-    }
+    "height": 16, // seems to fit perfectly
   },
   "modules": [
     {
