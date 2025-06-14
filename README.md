@@ -26,6 +26,11 @@ extensions I currently have instead.
 > It is suspected that these extensions are only available in the proprietary
 > version of VS Code.
 
+## Wallpaper credits
+
+- [Skirk](https://www.pixiv.net/en/artworks/114284093)
+- The fastfetch and hyprlock shogun images are from Hoyoverse's Paimon Paintings.
+
 ## Dependencies
 
 - These are (NeoVim) stuff that cannot be download through Lazy and/or Mason.
