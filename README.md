@@ -15,17 +15,6 @@
   - Wallpapers I use.
   - and some more
 
-- For VS Code, since their extensions.json file contains some sensitive
-info (aka, info about my directory structure), I will take the list of
-extensions I currently have instead.
-  - These extensions can be installed via the [convenience script](./vscode-install-extensions.sh)
-
-> [!NOTE]
-> As of now, some of the extensions in the script cannot be installed using
-> the VS Code version shipped by package managers (eg, `pacman`).
-> It is suspected that these extensions are only available in the proprietary
-> version of VS Code.
-
 ## Wallpaper credits
 
 - [Skirk](https://www.pixiv.net/en/artworks/114284093)
