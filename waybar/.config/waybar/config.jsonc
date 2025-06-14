@@ -43,7 +43,7 @@
     "clock": {
         "format": "{:%T %a %x}",
         "interval": 1,
-        "tooltip-format": "<span size='10pt' font='JetBrainsMono Nerd Font'>{calendar}</span>",
+        "tooltip-format": "<span size='10pt' font='ComicShannsMono Nerd Font'>{calendar}</span>",
         "calendar": {
             "mode"          : "year",
             "mode-mon-col"  : 3,
