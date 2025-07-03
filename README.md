@@ -18,6 +18,7 @@
 ## Wallpaper credits
 
 - [Skirk](https://www.pixiv.net/en/artworks/114284093)
+- [Raiden Shogun](https://www.pixiv.net/en/artworks/92390436)
 - The fastfetch and hyprlock shogun images are from Hoyoverse's Paimon Paintings.
 
 ## Dependencies
