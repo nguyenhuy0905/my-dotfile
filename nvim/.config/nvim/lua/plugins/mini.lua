@@ -18,10 +18,46 @@ return {
             },
         })
         require("mini.comment").setup({})
+        require("mini.completion").setup({})
         require("mini.extra").setup({})
         require("mini.operators").setup({})
         require("mini.surround").setup({})
         require("mini.pairs").setup({})
+        require("mini.snippets").setup({
+            snippets = {
+                -- some languages have completions for the language itself and its docs.
+                function(context)
+                    local path = vim.fn.stdpath("data")
+                        .. "/lazy/friendly-snippets/snippets"
+                    local comp_file = vim.fn.glob(
+                        "`find "
+                            .. path
+                            .. " -type f -name '"
+                            .. context.lang
+                            .. ".json'`"
+                    )
+                    if vim.fn.filereadable(comp_file) == false then
+                        return
+                    end
+                    return MiniSnippets.read_file(comp_file)
+                end,
+                function(context)
+                    local path = vim.fn.stdpath("data")
+                        .. "/lazy/friendly-snippets/snippets"
+                    local comp_file = vim.fn.glob(
+                        "`find "
+                            .. path
+                            .. " -type f -name '"
+                            .. context.lang
+                            .. "doc.json'`"
+                    )
+                    if vim.fn.filereadable(comp_file) == false then
+                        return
+                    end
+                    return MiniSnippets.read_file(comp_file)
+                end,
+            },
+        })
         -- general workflow
         require("mini.bracketed").setup({
             file = { suffix = "" },
