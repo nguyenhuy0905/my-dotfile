@@ -184,17 +184,17 @@ return {
                         local ret = ""
                         if diff.add and diff.add > 0 then
                             ret = ret
-                                .. "%#DiagnosticVirtualLinesOk# "
+                                .. "%#DiagnosticVirtualLinesOk#  "
                                 .. diff.add
                         end
                         if diff.delete and diff.delete > 0 then
                             ret = ret
-                                .. " %#DiagnosticVirtualLinesError# "
+                                .. " %#DiagnosticVirtualLinesError#  "
                                 .. diff.delete
                         end
                         if diff.change and diff.change > 0 then
                             ret = ret
-                                .. " %#DiagnosticVirtualLinesWarn# "
+                                .. " %#DiagnosticVirtualLinesWarn#  "
                                 .. diff.change
                         end
                         return ret
@@ -232,25 +232,25 @@ return {
                         local count = diag_list[vim.diagnostic.severity.ERROR]
                         if count then
                             ret = ret
-                                .. "%#DiagnosticVirtualLinesError# "
+                                .. "%#DiagnosticVirtualLinesError#  "
                                 .. count
                         end
                         count = diag_list[vim.diagnostic.severity.WARN]
                         if count then
                             ret = ret
-                                .. "%#DiagnosticVirtualLinesWarn#  "
+                                .. "%#DiagnosticVirtualLinesWarn#   "
                                 .. count
                         end
                         count = diag_list[vim.diagnostic.severity.HINT]
                         if count then
                             ret = ret
-                                .. "%#DiagnosticVirtualLinesHint#  "
+                                .. "%#DiagnosticVirtualLinesHint#   "
                                 .. count
                         end
                         count = diag_list[vim.diagnostic.severity.INFO]
                         if count then
                             ret = ret
-                                .. "%#DiagnosticVirtualLinesWarn#  "
+                                .. "%#DiagnosticVirtualLinesWarn#   "
                                 .. count
                         end
                         return ret
