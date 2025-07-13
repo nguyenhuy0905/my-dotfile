@@ -1,38 +1,38 @@
 # set nvim as manpager
 set -gx MANPAGER 'nvim +Man!'
-set -gx PAGER 'bat'
+set -gx PAGER bat
 
 # env
-set -gx EDITOR "nvim"
+set -gx EDITOR nvim
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_CACHE_HOME "$XDG_CONFIG_HOME/cache"
 set -gx PATH "$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/.config/local/share/nvim/mason/bin"
 
-
 # cmake stuff
-set -gx CMAKE_BUILD_TYPE 'Debug'
-set -gx CMAKE_C_COMPILER 'gcc'
+set -gx CMAKE_BUILD_TYPE Debug
+set -gx CMAKE_C_COMPILER gcc
 set -gx CMAKE_CXX_COMPILER 'g++'
-set -gx CMAKE_GENERATOR 'Ninja'
-set -gx CMAKE_EXPORT_COMPILE_COMMANDS 'ON'
-set -gx CMAKE_LINKER_TYPE 'mold'
-set -gx CMAKE_C_COMPILER_LAUNCHER 'ccache'
-set -gx CMAKE_CXX_COMPILER_LAUNCHER 'ccache'
+set -gx CMAKE_GENERATOR Ninja
+set -gx CMAKE_EXPORT_COMPILE_COMMANDS ON
+set -gx CMAKE_LINKER_TYPE mold
+set -gx CMAKE_C_COMPILER_LAUNCHER ccache
+set -gx CMAKE_CXX_COMPILER_LAUNCHER ccache
 
-set -gx CC 'gcc'
+set -gx CC gcc
 set -gx CXX 'g++'
 
 # cargo stuff
-set -gx RUSTC_WRAPPER 'sccache'
-set -gx CARGO_TARGET_x86_LINUX_GNU_LINKER 'mold'
+# set -gx RUSTC_WRAPPER sccache
+set -gx RUSTC_WORKSPACE_WRAPPER sccache
+set -gx CARGO_TARGET_x86_LINUX_GNU_LINKER mold
 set -gx RUSTFLAGS '-C link-args=-fuse-ld=mold'
 
 # fcitx stuff
 set -gx XMODIFIERS "@im=fcitx"
-set -gx QT_IM_MODULE "fcitx"
-set -gx SDL_IM_MODULE "fcitx"
-set -gx GLFW_IM_MODULE "ibus"
+set -gx QT_IM_MODULE fcitx
+set -gx SDL_IM_MODULE fcitx
+set -gx GLFW_IM_MODULE ibus
 
 # fzf looks
 set -gx FZF_DEFAULT_OPTS "\
