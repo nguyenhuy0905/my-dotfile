@@ -2,5 +2,5 @@ fork = true
 srgb = true
 
 [font]
-normal = ["JetBrainsMono Nerd Font"]
+normal = ["Iosevka Nerd Font"]
 size = 14
