@@ -2,10 +2,6 @@ return {
     "echasnovski/mini.nvim",
     -- url = "https://github.com/nguyenhuy0905/mini.nvim",
     -- dir = vim.fn.getenv("HOME") .. "/code/build-from-src/mini.nvim",
-    dependencies = {
-        -- mini.snippets and mini.completions
-        "rafamadriz/friendly-snippets",
-    },
     version = "*",
     config = function()
         local miniclue = require("mini.clue")
@@ -29,19 +25,6 @@ return {
         require("mini.pairs").setup({})
         require("mini.snippets").setup({
             snippets = {
-                -- global
-
-                require("mini.snippets").gen_loader.from_file(
-                    vim.fn.stdpath("data")
-                        .. "/lazy/friendly-snippets/snippets/global.json"
-                ),
-
-                -- so that I can spam this
-                require("mini.snippets").gen_loader.from_file(
-                    vim.fn.stdpath("data")
-                        .. "/lazy/friendly-snippets/snippets/license.json"
-                ),
-
                 -- some languages have completions for the language itself and its docs.
                 function(context)
                     local path = vim.fn.stdpath("data")
@@ -53,7 +36,10 @@ return {
                             .. context.lang
                             .. ".json'`"
                     )
-                    return MiniSnippets.gen_loader.from_file(comp_file)
+                    if vim.fn.filereadable(comp_file) == false then
+                        return
+                    end
+                    return MiniSnippets.read_file(comp_file)
                 end,
                 function(context)
                     local path = vim.fn.stdpath("data")
@@ -65,7 +51,10 @@ return {
                             .. context.lang
                             .. "doc.json'`"
                     )
-                    return MiniSnippets.gen_loader.from_file(comp_file)
+                    if vim.fn.filereadable(comp_file) == false then
+                        return
+                    end
+                    return MiniSnippets.read_file(comp_file)
                 end,
             },
         })
