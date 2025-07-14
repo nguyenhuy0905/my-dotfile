@@ -6,7 +6,6 @@ vim.keymap.set(
     "<Esc>?\\%V",
     { desc = "Search in selected area (backwards)" }
 )
-vim.keymap.set("x", "s", ":s/\\%V", { desc = "Replace in selected area" })
 
 vim.keymap.set(
     "x",

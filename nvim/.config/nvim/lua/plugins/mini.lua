@@ -35,11 +35,13 @@ return {
                     vim.fn.stdpath("data")
                         .. "/lazy/friendly-snippets/snippets/global.json"
                 ),
-
-                -- so that I can spam this
                 require("mini.snippets").gen_loader.from_file(
                     vim.fn.stdpath("data")
                         .. "/lazy/friendly-snippets/snippets/license.json"
+                ),
+                require("mini.snippets").gen_loader.from_file(
+                    vim.fn.stdpath("data")
+                        .. "/lazy/friendly-snippets/snippets/loremipsum.json"
                 ),
 
                 -- some languages have completions for the language itself and its docs.
