@@ -1,5 +1,5 @@
 return {
-    "echasnovski/mini.nvim",
+    "nvim-mini/mini.nvim",
     -- url = "https://github.com/nguyenhuy0905/mini.nvim",
     -- dir = vim.fn.getenv("HOME") .. "/code/build-from-src/mini.nvim",
     dependencies = {
