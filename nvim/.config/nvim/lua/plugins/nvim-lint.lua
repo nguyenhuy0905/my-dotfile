@@ -1,12 +1,13 @@
 return {
     "mfussenegger/nvim-lint",
     version = "*",
+    cond = false,
     event = "BufEnter",
     config = function()
         require("lint").linters_by_ft = {
             bash = { "shellcheck" },
-            c = { "clang-tidy" },
-            cpp = { "clang-tidy" },
+            c = { "clangtidy" },
+            cpp = { "clangtidy" },
             rust = { "clippy" },
         }
         vim.api.nvim_create_autocmd({ "BufWritePost" }, {
