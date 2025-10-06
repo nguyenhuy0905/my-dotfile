@@ -139,39 +139,39 @@ return {
         require("mini.jump2d").setup({})
         -- appearances
         -- neovide has all these eye candies built-in
-        -- if not vim.g.neovide then
-        --     require("mini.animate").setup({
-        --         -- newer versions of kitty terminal supports cursor animation
-        --         -- already
-        --         cursor = {
-        --             enable = false,
-        --         },
-        --         scroll = {
-        --             timing = require("mini.animate").gen_timing.exponential({
-        --                 easing = "out",
-        --                 duration = 5,
-        --             }),
-        --         },
-        --         resize = {
-        --             timing = require("mini.animate").gen_timing.exponential({
-        --                 easing = "out",
-        --                 duration = 5,
-        --             }),
-        --         },
-        --         open = {
-        --             timing = require("mini.animate").gen_timing.exponential({
-        --                 easing = "out",
-        --                 duration = 5,
-        --             }),
-        --         },
-        --         close = {
-        --             timing = require("mini.animate").gen_timing.exponential({
-        --                 easing = "out",
-        --                 duration = 5,
-        --             }),
-        --         },
-        --     })
-        -- end
+        if not vim.g.neovide then
+            require("mini.animate").setup({
+                -- newer versions of kitty terminal supports cursor animation
+                -- already
+                cursor = {
+                    enable = false,
+                },
+                scroll = {
+                    timing = require("mini.animate").gen_timing.exponential({
+                        easing = "out",
+                        duration = 5,
+                    }),
+                },
+                resize = {
+                    timing = require("mini.animate").gen_timing.exponential({
+                        easing = "out",
+                        duration = 5,
+                    }),
+                },
+                open = {
+                    timing = require("mini.animate").gen_timing.exponential({
+                        easing = "out",
+                        duration = 5,
+                    }),
+                },
+                close = {
+                    timing = require("mini.animate").gen_timing.exponential({
+                        easing = "out",
+                        duration = 5,
+                    }),
+                },
+            })
+        end
         require("mini.hipatterns").setup({
             highlighters = {
                 -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
