@@ -22,7 +22,8 @@ return {
             },
         })
         require("mini.comment").setup({})
-        require("mini.completion").setup({})
+        -- there's builtin autocomplete already.
+        -- require("mini.completion").setup({})
         require("mini.extra").setup({})
         require("mini.operators").setup({})
         require("mini.surround").setup({})
