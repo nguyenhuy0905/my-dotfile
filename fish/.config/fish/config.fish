@@ -7,7 +7,7 @@ set -gx EDITOR nvim
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_CACHE_HOME "$XDG_CONFIG_HOME/cache"
-set -gx PATH "$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/.config/local/share/nvim/mason/bin"
+set -ga PATH "$HOME/.local/bin"
 
 # cmake stuff
 set -gx CMAKE_BUILD_TYPE Debug
@@ -42,10 +42,18 @@ set -gx FZF_DEFAULT_OPTS "\
 --color=selected-bg:#45475A \
 --color=border:#313244,label:#CDD6F4"
 
+function fish_prompt -d "customized left prompt"
+    printf "%s%s%s@%s%s%s%s%s\n\$ " \
+        (set_color $fish_color_user) $USER (set_color normal) \
+        (set_color $fish_color_host) $hostname \
+        (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
+end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    starship init fish | source
+    # starship init fish | source
     source "$XDG_CONFIG_HOME/fish/fzf.fish"
+    fish_config theme choose "Catppuccin Mocha"
     fish_vi_key_bindings insert
     fastfetch
 end
