@@ -25,7 +25,6 @@ return {
         -- there's builtin autocomplete already.
         -- require("mini.completion").setup({})
         require("mini.extra").setup({})
-        require("mini.operators").setup({})
         require("mini.surround").setup({})
         require("mini.pairs").setup({})
         require("mini.snippets").setup({
