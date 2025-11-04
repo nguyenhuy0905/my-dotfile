@@ -6,17 +6,7 @@ vim.lsp.set_log_level("off")
 vim.opt.shell = "fish"
 vim.o.history = 250
 
-if not vim.o.completeopt:find("fuzzy") then
-    vim.o.completeopt = vim.o.completeopt .. ",fuzzy"
-end
-
-if not vim.o.completeopt:find("noselect") then
-    vim.o.completeopt = vim.o.completeopt .. ",noselect"
-end
-
-if not vim.o.completeopt:find("preview") then
-    vim.o.completeopt = vim.o.completeopt .. ",preview"
-end
+vim.opt.completeopt = { "menuone", "popup", "fuzzy", "preview", "noselect" }
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(ev)
