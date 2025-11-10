@@ -1,14 +1,14 @@
 @import url("./colors.css");
 * {
     font-family: ComicShannsMono Nerd Font;
-    font-size: 14px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .module {
     background-color: @base;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border-radius: 10px;
     opacity: 0.85;
     border-style: solid;
@@ -94,8 +94,9 @@ window#waybar.empty #window {
 
 #battery {
     padding-left: 5px;
-    padding-right: 10px;
-    border-radius: 0px;
+    padding-right: 20px;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 5px;
     color: @sapphire;
     border-bottom-width: 2px;
     border-color: @sapphire;

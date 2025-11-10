@@ -49,6 +49,10 @@ function fish_prompt -d "customized left prompt"
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
 
+if [ -e "$HOME/.cargo/env.fish" ]
+    source "$HOME/.cargo/env.fish"
+end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     # starship init fish | source

@@ -4,7 +4,7 @@
     "separator": " ",
   },
   "logo": {
-    "type": "kitty",
+    "type": "kitty-icat",
     "source": "$XDG_CONFIG_HOME/fastfetch/shogun*.webp",
     "padding": {
       "top": 0
