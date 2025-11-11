@@ -95,8 +95,7 @@ window#waybar.empty #window {
 #battery {
     padding-left: 5px;
     padding-right: 20px;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 5px;
+    border-radius: 0px;
     color: @sapphire;
     border-bottom-width: 2px;
     border-color: @sapphire;

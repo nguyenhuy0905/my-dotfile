@@ -3,14 +3,14 @@
   "display": {
     "separator": " ",
   },
-  "logo": {
-    "type": "kitty-icat",
-    "source": "$XDG_CONFIG_HOME/fastfetch/shogun*.webp",
-    "padding": {
-      "top": 0
-    },
-    "height": 16, // seems to fit perfectly
-  },
+  // "logo": {
+  //   "type": "iterm",
+  //   "source": "$XDG_CONFIG_HOME/fastfetch/shogun*.webp",
+  //   "padding": {
+  //     "top": 0
+  //   },
+  //   "height": 16, // seems to fit perfectly
+  // },
   "modules": [
     {
       "type": "title",
