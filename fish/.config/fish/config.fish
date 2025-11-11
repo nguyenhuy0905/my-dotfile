@@ -42,13 +42,6 @@ set -gx FZF_DEFAULT_OPTS "\
 --color=selected-bg:#45475A \
 --color=border:#313244,label:#CDD6F4"
 
-function fish_prompt -d "customized left prompt"
-    printf "%s%s%s@%s%s%s%s%s\n\$ " \
-        (set_color $fish_color_user) $USER (set_color normal) \
-        (set_color $fish_color_host) $hostname \
-        (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
-end
-
 if [ -e "$HOME/.cargo/env.fish" ]
     source "$HOME/.cargo/env.fish"
 end
@@ -58,6 +51,7 @@ if status is-interactive
     # starship init fish | source
     source "$XDG_CONFIG_HOME/fish/fzf.fish"
     fish_config theme choose "Catppuccin Mocha"
+    fish_config prompt choose astronaut
     fish_vi_key_bindings insert
     fastfetch
 end
