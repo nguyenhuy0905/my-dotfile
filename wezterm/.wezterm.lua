@@ -2,7 +2,7 @@ local wezterm = require('wezterm')
 local font = wezterm.font('Iosevka Nerd Font')
 
 return {
-    font_size = 24,
+    font_size = 14,
     font = font,
     color_scheme = 'Catppuccin Mocha',
     use_fancy_tab_bar = false,

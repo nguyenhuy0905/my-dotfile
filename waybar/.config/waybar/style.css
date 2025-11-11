@@ -1,14 +1,14 @@
 @import url("./colors.css");
 * {
     font-family: ComicShannsMono Nerd Font;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .module {
     background-color: @base;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     border-radius: 10px;
     opacity: 0.85;
     border-style: solid;
@@ -29,7 +29,7 @@ window#waybar {
     margin: 2px;
     border-radius: 10px;
     transition: min-width 0.1s ease-in-out;
-
+    color: @text;
 }
 
 #workspaces button.visible {
