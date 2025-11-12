@@ -1,4 +1,4 @@
-local wezterm = require('wezterm')
+﻿local wezterm = require('wezterm')
 local font = wezterm.font('Iosevka Nerd Font')
 
 return {
@@ -11,5 +11,5 @@ return {
             background = '#1e1e2e',
         },
     },
-    default_prog = { '/usr/bin/fish' },
+    default_prog = { '/usr/bin/env', 'fish' },
 }
