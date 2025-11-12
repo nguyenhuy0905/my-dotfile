@@ -3,4 +3,4 @@ srgb = true
 
 [font]
 normal = ["Iosevka Nerd Font"]
-size = 14
+size = 12
