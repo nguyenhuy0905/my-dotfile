@@ -14,6 +14,11 @@
     border-style: solid;
 }
 
+.modules-right > widget:last-child > #battery {
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 2px;
+}
+
 window#waybar {
     background-color: transparent;
     color: @text;
