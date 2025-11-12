@@ -4,13 +4,9 @@ local status_line = function()
     -- left
     ret = ret .. '%<[' .. [[%{mode()}]] .. ']'
     ret = ret .. ' %f %m%r%h'
-    -- middle-left
-    ret = ret .. '%='
-    -- middle-right
-    ret = ret .. '%='
-    ret = ret .. '%(%l %c%)%<'
     -- right
     ret = ret .. '%='
+    ret = ret .. '%<%-20.(%l %c %p%%%)'
     return ret
 end
 
