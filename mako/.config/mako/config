@@ -2,8 +2,11 @@ max-history=0
 max-visible=2
 history=0
 font=JetBrains Mono NF
-#background-color=#6E7CD0CC
-background-color=#2D2E7FCC
-border-color=#4D4E9FCC
-border-radius=3
-default-timeout=5000
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#cba6f7
+progress-color=over #313244
+
+[urgency=high]
+border-color=#fab387
