@@ -1,0 +1,9 @@
+mpd_host = "~/.mpd/socket"
+mpd_port = "6600"
+mpd_music_dir = "~/Nextcloud/Music/"
+
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "no"
+visualizer_type = "spectrum"
+visualizer_look = "+|"
