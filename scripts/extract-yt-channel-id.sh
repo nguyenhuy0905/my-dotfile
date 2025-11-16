@@ -39,4 +39,4 @@ channel_tag="$1"
 yt_url="https://www.youtube.com/@"
 yt_url+=${channel_tag}
 
-curl "${yt_url}" | grep -Eo '"externalId":"[a-zA-Z0-9_]*"' | sed -E 's/"externalId":"(.*)"/\1/g'
+curl "${yt_url}" | grep -Eo '"externalId":"[a-zA-Z0-9_-]*"' | sed -E 's/"externalId":"(.*)"/\1/g'
