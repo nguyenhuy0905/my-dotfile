@@ -6,7 +6,6 @@ return {
         -- mini.snippets and mini.completions
         "rafamadriz/friendly-snippets",
     },
-    version = "*",
     config = function()
         local miniclue = require("mini.clue")
         local gen_clues = miniclue.gen_clues
@@ -191,7 +190,16 @@ return {
             },
             hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
         })
-        require("mini.icons").setup({})
+        require("mini.icons").setup({
+            default = {
+                directory = {
+                    hl = 'MiniIconsPurple',
+                },
+                file = {
+                    hl = 'MiniIconsYellow',
+                },
+            },
+        })
         require("mini.indentscope").setup({
             draw = {
                 delay = 10,
