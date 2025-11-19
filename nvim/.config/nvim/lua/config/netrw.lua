@@ -22,25 +22,20 @@ end
 local function get_file_name(line)
     assert(vim.b.netrw_liststyle ~= 2)
     if vim.b.netrw_liststyle == 0 then
-        -- directory
-        local _, _, dir = line:find("^(.+)/")
-        if dir then
-            return 0, dir, true
-        end
         -- simp
         local _, _, sym = line:find("^.+@%s*%-*>%s*(.+)")
         if sym then
             return 0, sym, false
         end
-        -- normal file
-        return 0, line, false
-    end
-    if vim.b.netrw_liststyle == 1 then
         -- directory
         local _, _, dir = line:find("^(.+)/")
         if dir then
             return 0, dir, true
         end
+        -- normal file
+        return 0, line, false
+    end
+    if vim.b.netrw_liststyle == 1 then
         -- simp
         local _, _, sym = line:find("^(.+)@%s+")
         if sym then
@@ -53,6 +48,11 @@ local function get_file_name(line)
             end
             --- @diagnostic disable-next-line: return-type-mismatch
             return 0, dest, false
+        end
+        -- directory
+        local _, _, dir = line:find("^(.+)/")
+        if dir then
+            return 0, dir, true
         end
         -- normal file
         local single_meta_field = "%s+%S+"
@@ -69,15 +69,15 @@ local function get_file_name(line)
     if not col then
         col = 0
     end
-    -- directory
-    local _, _, dir = nopipe:find("^(.+)/")
-    if dir then
-        return col, dir, true
-    end
     -- symlink
     local _, _, sym = nopipe:find("^.+@%s*%-*>%s*(.+)")
     if sym then
         return col, sym, false
+    end
+    -- directory
+    local _, _, dir = nopipe:find("^(.+)/")
+    if dir then
+        return col, dir, true
     end
     -- file
     return col, nopipe, false
