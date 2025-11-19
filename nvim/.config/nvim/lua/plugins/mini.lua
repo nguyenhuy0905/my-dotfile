@@ -173,19 +173,19 @@ return {
                 -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
                 fixme = {
                     pattern = "%f[%w]()FIXME()%f[%W]",
-                    group = "MiniHipatternsFixme",
+                    group = "ErrorMsg",
                 },
                 hack = {
                     pattern = "%f[%w]()HACK()%f[%W]",
-                    group = "MiniHipatternsHack",
+                    group = "WarningMsg",
                 },
                 todo = {
                     pattern = "%f[%w]()TODO()%f[%W]",
-                    group = "MiniHipatternsTodo",
+                    group = "ModeMsg",
                 },
                 note = {
                     pattern = "%f[%w]()NOTE()%f[%W]",
-                    group = "MiniHipatternsNote",
+                    group = "MoreMsg",
                 },
             },
             hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
