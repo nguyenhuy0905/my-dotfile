@@ -85,9 +85,6 @@ end
 
 --- @param bufnr integer
 local function render_netrw(bufnr)
-    if vim.b.netrw_liststyle == 2 then
-        return
-    end
     local ns = vim.api.nvim_create_namespace("netrw")
     local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
     for i, line in ipairs(lines) do
@@ -95,12 +92,42 @@ local function render_netrw(bufnr)
             goto continue
         end
         assert(line:len() > 0, "Line shouldn't be empty")
+        -- if the list style is the default `ls` style, I don't want the icons
+        -- but I still want the color
+        if vim.b.netrw_liststyle == 2 then
+            local _, dir_end = line:find("/", 1)
+            local _, next_dir = line:find("/", dir_end + 1, true)
+            while next_dir do
+                dir_end = next_dir
+                _, next_dir = line:find("/", dir_end + 1, true)
+            end
+            if not dir_end then
+                goto continue
+            end
+
+            vim.api.nvim_buf_set_extmark(bufnr, ns, i - 1, 0, {
+                -- so that it doesn't collide with the extmark right below
+                id = i * 2,
+                hl_group = "MiniIconsPurple",
+                end_col = dir_end
+            })
+            vim.api.nvim_buf_set_extmark(bufnr, ns, i - 1, dir_end + 1, {
+                id = i * 2 + 1,
+                hl_group = "MiniIconsYellow",
+                end_col = line:len()
+            })
+
+            goto continue
+        end
+
         local col, trimmed, is_dir = get_file_name(line)
         local icon, hl = get_icon_info(trimmed, is_dir)
         vim.api.nvim_buf_set_extmark(bufnr, ns, i - 1, col, {
             id = i,
             virt_text = { { icon .. " ", hl } },
             virt_text_pos = "inline",
+            hl_group = is_dir and "MiniIconsPurple" or "MiniIconsYellow",
+            end_col = line:len(),
         })
         ::continue::
     end
