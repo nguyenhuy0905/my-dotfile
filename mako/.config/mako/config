@@ -1,6 +1,7 @@
-max-history=0
+max-history=100
 max-visible=2
-history=0
+history=1
+default-timeout=5000
 font=JetBrains Mono NF
 
 background-color=#1e1e2e
