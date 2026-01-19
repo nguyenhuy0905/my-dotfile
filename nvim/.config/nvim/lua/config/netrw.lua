@@ -96,26 +96,34 @@ local function render_netrw(bufnr)
         -- but I still want the color
         if vim.b.netrw_liststyle == 2 then
             local _, dir_end = line:find("/", 1)
-            local _, next_dir = line:find("/", dir_end + 1, true)
-            while next_dir do
-                dir_end = next_dir
-                _, next_dir = line:find("/", dir_end + 1, true)
-            end
-            if not dir_end then
-                goto continue
+            if dir_end then
+                local _, next_dir = line:find("/", dir_end + 1, true)
+                while next_dir do
+                    dir_end = next_dir
+                    _, next_dir = line:find("/", dir_end + 1, true)
+                end
+                if not dir_end then
+                    goto continue
+                end
             end
 
             vim.api.nvim_buf_set_extmark(bufnr, ns, i - 1, 0, {
                 -- so that it doesn't collide with the extmark right below
                 id = i * 2,
                 hl_group = "MiniIconsPurple",
-                end_col = dir_end
+                end_col = dir_end and dir_end or 0,
             })
-            vim.api.nvim_buf_set_extmark(bufnr, ns, i - 1, dir_end + 1, {
-                id = i * 2 + 1,
-                hl_group = "MiniIconsYellow",
-                end_col = line:len()
-            })
+            vim.api.nvim_buf_set_extmark(
+                bufnr,
+                ns,
+                i - 1,
+                dir_end and dir_end + 1 or 0,
+                {
+                    id = i * 2 + 1,
+                    hl_group = "MiniIconsYellow",
+                    end_col = line:len(),
+                }
+            )
 
             goto continue
         end

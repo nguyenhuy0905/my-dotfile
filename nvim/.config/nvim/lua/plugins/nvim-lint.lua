@@ -1,7 +1,7 @@
 return {
     "mfussenegger/nvim-lint",
     version = "*",
-    cond = true,
+    cond = false,
     event = "BufEnter",
     config = function()
         require("lint").linters_by_ft = {
